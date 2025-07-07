@@ -1,7 +1,12 @@
-import React from 'react';
-import { MapPin, Clock, DollarSign, Users, Coffee, Laptop, Heart, Trophy } from 'lucide-react';
+import React, { useState } from 'react';
+import { MapPin, Clock, DollarSign, Users, Coffee, Laptop, Heart, Trophy, Upload, FileText } from 'lucide-react';
+import ResumeUploadDialog from '../components/ResumeUploadDialog';
+import HRContactModal from '../components/HRContactModal';
 
 const Careers = () => {
+  const [isResumeDialogOpen, setIsResumeDialogOpen] = useState(false);
+  const [isHRContactOpen, setIsHRContactOpen] = useState(false);
+
   const openPositions = [
     {
       title: 'Senior Full Stack Developer',
@@ -163,7 +168,10 @@ const Careers = () => {
                   </div>
                 </div>
                 
-                <button className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold">
+                <button 
+                  onClick={() => setIsResumeDialogOpen(true)}
+                  className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold"
+                >
                   Apply Now
                 </button>
               </div>
@@ -171,23 +179,116 @@ const Careers = () => {
           </div>
         </div>
 
-        {/* CTA Section */}
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-4">Don't See the Right Position?</h3>
-          <p className="text-xl mb-8 opacity-90">
-            We're always interested in connecting with talented professionals. 
-            Send us your resume and tell us about yourself!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300">
-              Send Your Resume
-            </button>
-            <button className="border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
-              Contact HR Team
-            </button>
+        {/* Enhanced CTA Section with Resume Upload and HR Contact */}
+        <div className="mt-20 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-12 text-center text-white relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] animate-pulse"></div>
+          </div>
+          
+          <div className="relative z-10">
+            <h3 className="text-3xl md:text-4xl font-bold mb-4">Don't See the Right Position?</h3>
+            <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+              We're always interested in connecting with talented professionals. 
+              Send us your resume and tell us about yourself!
+            </p>
+            
+            {/* Enhanced Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+              <button 
+                onClick={() => setIsResumeDialogOpen(true)}
+                className="group bg-white text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <Upload className="h-5 w-5 group-hover:animate-bounce" />
+                <span>Upload Your Resume</span>
+              </button>
+              <button 
+                onClick={() => setIsHRContactOpen(true)}
+                className="group border-2 border-white text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 flex items-center justify-center space-x-2"
+              >
+                <Users className="h-5 w-5" />
+                <span>Contact HR Team</span>
+              </button>
+            </div>
+
+            {/* HR Services Preview */}
+            <div className="mb-8 bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+              <h4 className="font-semibold mb-4 text-lg">Our HR Team Can Help With:</h4>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                <div className="flex items-center space-x-2">
+                  <Users className="h-4 w-4" />
+                  <span>Recruitment & Hiring</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Heart className="h-4 w-4" />
+                  <span>Employee Relations</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Trophy className="h-4 w-4" />
+                  <span>Training & Development</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <DollarSign className="h-4 w-4" />
+                  <span>Payroll & Benefits</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Features */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <FileText className="h-8 w-8 mx-auto mb-3 text-white" />
+                <h4 className="font-semibold mb-2">Easy Application</h4>
+                <p className="text-sm opacity-90">Upload your resume and apply to multiple positions with one click</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <Heart className="h-8 w-8 mx-auto mb-3 text-white" />
+                <h4 className="font-semibold mb-2">Great Benefits</h4>
+                <p className="text-sm opacity-90">Comprehensive health coverage, flexible work, and growth opportunities</p>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                <Trophy className="h-8 w-8 mx-auto mb-3 text-white" />
+                <h4 className="font-semibold mb-2">Career Growth</h4>
+                <p className="text-sm opacity-90">Clear advancement paths and professional development support</p>
+              </div>
+            </div>
+
+            {/* Call to Action Stats */}
+            <div className="mt-8 pt-8 border-t border-white/20">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div>
+                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-sm opacity-80">Team Members</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">95%</div>
+                  <div className="text-sm opacity-80">Employee Satisfaction</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">4.8/5</div>
+                  <div className="text-sm opacity-80">Glassdoor Rating</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-bold">24/7</div>
+                  <div className="text-sm opacity-80">HR Support</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Resume Upload Dialog */}
+      <ResumeUploadDialog 
+        isOpen={isResumeDialogOpen} 
+        onClose={() => setIsResumeDialogOpen(false)} 
+      />
+
+      {/* HR Contact Modal */}
+      <HRContactModal 
+        isOpen={isHRContactOpen} 
+        onClose={() => setIsHRContactOpen(false)} 
+      />
     </section>
   );
 };

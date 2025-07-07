@@ -35,15 +35,14 @@ const Header = () => {
           {/* Logo */}
           <NavLink 
             to="/" 
-            className="flex items-center space-x-2"
+            className="flex items-center"
             onClick={closeMenu}
           >
-            <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-2 rounded-lg">
-              <Zap className="h-6 w-6 text-white" />
-            </div>
-            <span className={`text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-              Novapex Infohub
-            </span>
+            <img 
+              src="/src/Assets/LogoBT.png" 
+              alt="Logo" 
+              className="h-20 w-auto object-cover "
+            />
           </NavLink>
 
           {/* Desktop Navigation */}
@@ -54,9 +53,9 @@ const Header = () => {
                 to={item.path}
                 className={({ isActive }) => `font-medium transition-colors duration-200 ${
                   isActive 
-                    ? 'text-blue-600 font-semibold' 
+                    ? 'text-blue-600 font-semibold ' 
                     : isScrolled 
-                      ? 'text-gray-900 hover:text-blue-600' 
+                      ? 'text-gray-900 hover:text-blue-600 ' 
                       : 'text-black hover:text-blue-300'
                 }`}
               >
