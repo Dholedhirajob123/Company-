@@ -28,52 +28,34 @@ const Header = () => {
   // Hero slides data
   const heroSlides = [
     {
-      title: "Transform Your Business with",
-      subtitle: "Cutting-Edge Software Solutions",
-      description: "We deliver innovative software solutions that drive growth, enhance efficiency, and create exceptional user experiences for businesses of all sizes.",
-      companyInfo: {
-        founded: "2018",
-        headquarters: "San Francisco, CA",
-        employees: "50+ Expert Developers",
-        mission: "Empowering businesses through technology"
-      },
-      performance: {
-        clients: "200+",
-        projects: "500+",
-        satisfaction: "98%",
-        retention: "95%"
-      },
-      image: "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg",
-      backgroundImage: "https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg",
-      gradient: "from-cyan-500 to-blue-600"
+      title: "Innovate",
+      subtitle: "Digital Solutions That Transform",
+      description: "We create cutting-edge software solutions that drive business growth and digital transformation for companies worldwide.",
+      image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
+      backgroundImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop"
     },
     {
-      title: "Innovative Technology",
-      subtitle: "Tailored to Your Needs",
-      description: "Custom software solutions designed to solve your unique business challenges and drive digital transformation.",
-      companyInfo: {
-        approach: "Agile Development",
-        technologies: "Modern Stack",
-        projects: "End-to-End Solutions",
-        support: "24/7 Support"
-      },
-      performance: {
-        efficiency: "40% Increase",
-        speed: "3x Faster",
-        uptime: "99.9%",
-        growth: "50% YoY"
-      },
-      image: "https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg",
-      backgroundImage: "https://images.pexels.com/photos/546819/pexels-photo-546819.jpeg",
-      gradient: "from-purple-500 to-purple-600"
+      title: "Scale",
+      subtitle: "Enterprise-Ready Technology",
+      description: "Build robust, scalable applications that grow with your business needs using modern cloud architecture and best practices.",
+      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
+      backgroundImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&h=1080&fit=crop"
+    },
+    {
+      title: "Secure",
+      subtitle: "Future-Proof Solutions",
+      description: "Implementing industry-leading security practices and emerging technologies to keep your business ahead of the curve.",
+      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+      backgroundImage: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=1920&h=1080&fit=crop"
     }
   ];
 
-  // Cartoon images for the side section
+  // Professional tech illustrations
   const cartoonImages = [
-    "https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg",
-    "https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg",
-    "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+    "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
+    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=300&fit=crop"
   ];
 
   // Core services
@@ -287,78 +269,78 @@ const Header = () => {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Dynamic Background Image with Overlay */}
         <div className="absolute inset-0">
           <div 
             className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-all duration-1000 ease-in-out"
             style={{ backgroundImage: `url(${currentSlideData.backgroundImage})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/85 to-purple-900/90"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
         </div>
 
         {/* Animated Background Pattern */}
         <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjJnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] animate-pulse"></div>
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4xIj48Y2lyY2xlIGN4PSIzMCIgY3k9IjMwIiByPSIyIi8+PC9nPjwvZz48L3N2Zz4=')] animate-pulse"></div>
         </div>
 
         {/* Content */}
         <div className="relative z-10 max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-20">
           {/* Left Content */}
-          <div className="text-white">
+          <div className="text-white animate-fade-in">
             {/* Company Badge */}
             <div className="mb-6">
-              <div className="inline-flex items-center gap-2 bg-cyan-500/20 backdrop-blur-sm rounded-full px-4 py-2 border border-cyan-400/30 mb-4">
+              <div className="inline-flex items-center gap-2 bg-cyan-500/20 backdrop-blur-sm rounded-full px-4 py-2 border border-cyan-400/30 mb-4 animate-scale-in">
                 <Star className="w-4 h-4 text-cyan-400" />
-                <span className="text-cyan-300 text-sm font-semibold">Technology Innovators</span>
+                <span className="text-cyan-300 text-sm font-semibold">TechVision Solutions</span>
               </div>
             </div>
 
             {/* Title and Description */}
             <div className="mb-8">
               <div className="transition-all duration-500 ease-in-out">
-                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight">
+                <h1 className="text-4xl md:text-6xl font-bold mb-4 leading-tight animate-slide-in-right">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">
                     {currentSlideData.title}
                   </span>
                 </h1>
-                <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-purple-300">
+                <h2 className="text-2xl md:text-3xl font-semibold mb-4 text-purple-300 animate-slide-in-right" style={{ animationDelay: '0.2s' }}>
                   {currentSlideData.subtitle}
                 </h2>
-                <p className="text-xl text-gray-200 leading-relaxed mb-6 max-w-lg">
+                <p className="text-xl text-gray-200 leading-relaxed mb-6 max-w-lg animate-slide-in-right" style={{ animationDelay: '0.4s' }}>
                   {currentSlideData.description}
                 </p>
               </div>
             </div>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-slide-in-right" style={{ animationDelay: '0.6s' }}>
               <Link
                 to="/services"
-                className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-gray-50 transition-colors duration-200 inline-flex items-center justify-center"
+                className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-cyan-700 transition-all duration-300 inline-flex items-center justify-center group transform hover:scale-105"
               >
                 Explore Services
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <button 
                 onClick={() => setIsModalOpen(true)}
-                className="group bg-white/20 backdrop-blur-sm border border-white/30 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/30 flex items-center justify-center gap-2"
+                className="group bg-white/10 backdrop-blur-sm border border-white/20 text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:bg-white/20 flex items-center justify-center gap-2 transform hover:scale-105"
               >
-                <Play className="w-5 h-5" />
+                <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 See How We Work
               </button>
             </div>
 
             {/* Slide Indicators */}
-            <div className="flex gap-3">
+            <div className="flex gap-3 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               {heroSlides.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentSlide(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`h-3 rounded-full transition-all duration-300 ${
                     index === currentSlide 
-                      ? 'bg-cyan-400 w-8 shadow-lg' 
-                      : 'bg-white/30 hover:bg-white/50'
+                      ? 'bg-cyan-400 w-8 shadow-lg shadow-cyan-400/50'
+                      : 'bg-white/30 hover:bg-white/50 w-3'
                   }`}
                 />
               ))}
@@ -366,10 +348,10 @@ const Header = () => {
           </div>
 
           {/* Right Side with Images */}
-          <div className="relative">
+          <div className="relative animate-fade-in" style={{ animationDelay: '0.3s' }}>
             {/* Main Slide Image */}
             <div className="relative mb-8">
-              <div className="relative overflow-hidden rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-105">
+              <div className="relative overflow-hidden rounded-3xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-1">
                 <img
                   src={currentSlideData.image}
                   alt={currentSlideData.title}
@@ -384,26 +366,26 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Cartoon/Illustration Slider */}
+            {/* Tech Illustration Grid */}
             <div className="grid grid-cols-2 gap-4">
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105">
                 <img
                   src={cartoonImages[currentCartoon]}
-                  alt="Tech illustration"
+                  alt="Tech innovation"
                   className="w-full h-32 object-cover transition-all duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 to-blue-500/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/40 to-blue-500/40"></div>
               </div>
               
-              <div className="relative overflow-hidden rounded-2xl shadow-lg">
+              <div className="relative overflow-hidden rounded-2xl shadow-lg transform transition-all duration-300 hover:scale-105">
                 <img
                   src={cartoonImages[(currentCartoon + 1) % cartoonImages.length]}
-                  alt="Tech projects"
+                  alt="Tech solutions"
                   className="w-full h-32 object-cover transition-all duration-500"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/20 to-green-500/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/40 to-green-500/40"></div>
               </div>
             </div>
           </div>
