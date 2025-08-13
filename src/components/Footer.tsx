@@ -71,8 +71,16 @@ const Footer = () => {
               <div className="flex items-center space-x-3 text-gray-400">
                 <Mail className="h-4 w-4" />
                 <a href="mailto:hello@Novapex Infohub.com" className="hover:text-white transition-colors duration-200">
-                  hello@novapexinfohub.com
+                 support@novapexhub.com
                 </a>
+                
+              </div>
+                 <div className="flex items-center space-x-3 text-gray-400">
+                <Mail className="h-4 w-4" />
+                <a href="mailto:hello@Novapex Infohub.com" className="hover:text-white transition-colors duration-200">
+contact@novapexhub.com
+                </a>
+                
               </div>
               <div className="flex items-center space-x-3 text-gray-400">
                 <Phone className="h-4 w-4" />

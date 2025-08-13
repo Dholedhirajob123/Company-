@@ -28,7 +28,8 @@ const Portfolio = () => {
     'Education',
     'Service',
     'E-commerce',
-    'Booking'
+    'Booking',
+      'Lagu Udhyog papad' 
   ];
 
   const projects = [
@@ -352,6 +353,65 @@ const Portfolio = () => {
     ]
   }
 },
+ {
+    id: 5,
+    title: 'Lagu Udhyog Papad Center Website',
+    category: 'Lagu Udhyog',
+    description: 'A complete online presence for a papad manufacturing business with product showcase, order management, and distributor network.',
+    image: 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1200',
+    technologies: ['React', 'Node.js', 'MongoDB', 'Payment Gateway'],
+    duration: '2 months',
+    team: '3 developers',
+    features: ['Product Catalog', 'Online Orders', 'Distributor Portal', 'Bulk Order System'],
+    detailedInfo: {
+      overview: 'A specialized website for a papad manufacturing business that showcases their products, handles online orders, and manages distributor relationships.',
+      challenge: 'Traditional papad businesses lacked digital presence, making it difficult to reach new customers and manage bulk orders efficiently.',
+      solution: 'We created a comprehensive platform with product showcase, online ordering system, and a dedicated portal for distributors to place bulk orders.',
+      workflow: [
+        'Business Requirements Analysis',
+        'Product Catalog Design',
+        'Order Management System',
+        'Distributor Portal Development',
+        'Payment Gateway Integration',
+        'Quality Testing',
+        'Launch & Training'
+      ],
+      keyFeatures: [
+        {
+          title: 'Product Showcase',
+          description: 'Beautiful display of papad varieties with detailed descriptions and images',
+          icon: <ShoppingCart className="h-5 w-5 text-blue-600" />
+        },
+        {
+          title: 'Online Ordering',
+          description: 'Easy ordering system for retail and bulk customers',
+          icon: <Clipboard className="h-5 w-5 text-blue-600" />
+        },
+        {
+          title: 'Distributor Portal',
+          description: 'Dedicated area for distributors to place and track bulk orders',
+          icon: <Truck className="h-5 w-5 text-blue-600" />
+        },
+        {
+          title: 'Recipe Section',
+          description: 'Creative recipes using their papad products to increase engagement',
+          icon: <BookOpen className="h-5 w-5 text-blue-600" />
+        }
+      ],
+      results: [
+        { value: '200%', label: 'Increase in orders' },
+        { value: '50+', label: 'New distributors onboarded' },
+        { value: '4.7/5', label: 'Customer satisfaction' },
+        { value: '30%', label: 'Reduction in order processing time' }
+      ],
+      testimonials: [
+        {
+          quote: "This website transformed our small papad business. We now receive orders from across the region and our distributor network has expanded significantly.",
+          author: "Rajesh Patel, Papad Center Owner"
+        }
+      ]
+    }
+  },
 
 
   

@@ -1,7 +1,41 @@
-import React from 'react';
-import { Target, Eye, Award, Globe } from 'lucide-react';
+import { useState } from 'react';
+import { Target, Eye, Award, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const About = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const teamMembers = [
+    {
+      name: "Mr. Amol Harne",
+      // role: "Chief Technology Officer",
+      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg",
+      description: "As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for a strong, client-centric organization. Amol oversees operations and ensures the delivery of exceptional services tailored to client needs.",
+      color: "blue"
+    },
+    {
+      name: "Mrs. Mrunal Ghenge",
+      // role: "Chief Operating Officer",
+      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
+      description: "Mrunal is a creative thinker and problem solver. Her focus on design, quality, and user experience brings life to Novapex Infohub’s projects. She specializes in translating client visions into visually appealing, functional web applications.",
+      color: "purple"
+    },
+    {
+      name: "Mrs. Rasika Aswar",
+      // role: "Head of Design",
+      image: "https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg",
+      description: "Rasika is a dynamic leader with expertise in web development and project management. Her commitment to delivering excellence drives Novapex Infohub's innovative solutions. She plays a pivotal role in leading the technical team and ensuring projects are executed flawlessly.",
+      color: "green"
+    },
+  ];
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === teamMembers.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? teamMembers.length - 1 : prev - 1));
+  };
+
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -71,18 +105,12 @@ const About = () => {
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
-                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Sarah Johnson</h4>
+                  <h4 className="text-2xl font-bold text-gray-900 mb-2">Mr. Amol Harne</h4>
                   <p className="text-blue-600 font-semibold mb-3">Chief Executive Officer & Founder</p>
                   <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                    "With over 15 years of experience in software development and business strategy, 
-                    I founded Novapex Infohub with a vision to create technology solutions that truly 
-                    make a difference. Our commitment to excellence and innovation drives everything we do."
+                   As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for a strong, client-centric organization. Amol oversees operations and ensures the delivery of exceptional services tailored to client needs.
                   </p>
-                  <div className="flex justify-center md:justify-start space-x-4 text-sm text-gray-500">
-                    <span>• MIT Computer Science</span>
-                    <span>• Former Google Senior Engineer</span>
-                    <span>• Tech Entrepreneur</span>
-                  </div>
+                 
                 </div>
               </div>
             </div>
@@ -245,55 +273,72 @@ const About = () => {
         </div>
 
         {/* Leadership Team Section */}
-        <div className="mb-20">
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">Leadership Team</h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet the visionary leaders who drive our company's success and innovation
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-shadow duration-300">
-              <img 
-                src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                alt="CTO Portrait" 
-                className="w-20 h-20 rounded-full object-cover border-4 border-blue-100 mx-auto mb-4"
-              />
-              <h4 className="text-xl font-bold text-gray-900 mb-1">Michael Chen</h4>
-              <p className="text-blue-600 font-semibold mb-3">Chief Technology Officer</p>
-              <p className="text-gray-600 text-sm">
-                Leading our technical vision with expertise in AI, cloud architecture, and scalable systems.
-              </p>
+     <div className="mb-20 relative">
+      <div className="text-center mb-12">
+        <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Co-Founders</h3>
+        <p className="text-gray-600 max-w-2xl mx-auto">
+          Meet the visionary leaders who drive our company's success and innovation
+        </p>
+      </div>
+      
+      {/* Slider Container */}
+      <div className="relative overflow-hidden">
+        {/* Navigation Arrows */}
+        <button 
+          onClick={prevSlide}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
+          aria-label="Previous team member"
+        >
+          <ChevronLeft className="h-5 w-5 text-gray-700" />
+        </button>
+        
+        <button 
+          onClick={nextSlide}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
+          aria-label="Next team member"
+        >
+          <ChevronRight className="h-5 w-5 text-gray-700" />
+        </button>
+
+        {/* Slides */}
+        <div 
+          className="flex transition-transform duration-500 ease-in-out"
+          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+        >
+          {teamMembers.map((member, index) => (
+            <div 
+              key={index} 
+              className="w-full flex-shrink-0 px-4"
+            >
+              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-shadow duration-300">
+                <img 
+                  src={member.image} 
+                  alt={`${member.name} Portrait`} 
+                  className={`w-20 h-20 rounded-full object-cover border-4 border-${member.color}-100 mx-auto mb-4`}
+                />
+                <h4 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h4>
+                <p className={`text-${member.color}-600 font-semibold mb-3`}>{member.role}</p>
+                <p className="text-gray-600 text-sm">
+                  {member.description}
+                </p>
+              </div>
             </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-shadow duration-300">
-              <img 
-                src="https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                alt="COO Portrait" 
-                className="w-20 h-20 rounded-full object-cover border-4 border-purple-100 mx-auto mb-4"
-              />
-              <h4 className="text-xl font-bold text-gray-900 mb-1">Emily Rodriguez</h4>
-              <p className="text-purple-600 font-semibold mb-3">Chief Operating Officer</p>
-              <p className="text-gray-600 text-sm">
-                Ensuring operational excellence and seamless project delivery across all our initiatives.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-shadow duration-300">
-              <img 
-                src="https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg?auto=compress&cs=tinysrgb&w=400" 
-                alt="Head of Design Portrait" 
-                className="w-20 h-20 rounded-full object-cover border-4 border-green-100 mx-auto mb-4"
-              />
-              <h4 className="text-xl font-bold text-gray-900 mb-1">David Kim</h4>
-              <p className="text-green-600 font-semibold mb-3">Head of Design</p>
-              <p className="text-gray-600 text-sm">
-                Crafting beautiful, user-centered experiences that delight and engage our clients' customers.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
+      </div>
+
+      {/* Navigation Dots */}
+      <div className="flex justify-center mt-6 space-x-2">
+        {teamMembers.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentSlide(index)}
+            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'}`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
+      </div>
+    </div>
 
         {/* Values */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">

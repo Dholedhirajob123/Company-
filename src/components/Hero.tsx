@@ -28,21 +28,21 @@ const Header = () => {
   // Hero slides data
   const heroSlides = [
     {
-      title: "Innovate",
+      title: "Transforming Digital Customer Experiences",
       subtitle: "Digital Solutions That Transform",
       description: "We create cutting-edge software solutions that drive business growth and digital transformation for companies worldwide.",
       image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=600&fit=crop",
       backgroundImage: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1920&h=1080&fit=crop"
     },
     {
-      title: "Scale",
+      title: "Empowering Digital Experiences for Businesses",
       subtitle: "Enterprise-Ready Technology",
       description: "Build robust, scalable applications that grow with your business needs using modern cloud architecture and best practices.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=800&h=600&fit=crop",
       backgroundImage: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=1920&h=1080&fit=crop"
     },
     {
-      title: "Secure",
+      title: "Innovative Digital Solutions",
       subtitle: "Future-Proof Solutions",
       description: "Implementing industry-leading security practices and emerging technologies to keep your business ahead of the curve.",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
@@ -147,8 +147,8 @@ const Header = () => {
     {
       title: "Email",
       icon: Mail,
-      details: ["hello@novapexinfohub.com", "support@novapexinfohub.com"],
-      action: "mailto:hello@novapexinfohub.com"
+      details: ["contact@novapexhub.com", "support@novapexinfohub.com"],
+      action: "contact@novapexhub.com"
     },
     {
       title: "Phone",

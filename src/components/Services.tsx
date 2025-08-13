@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { 
   Code, 
   Smartphone, 
@@ -11,13 +11,17 @@ import {
   Globe,
   Bot,
   BarChart3,
-  Headphones
+  Headphones,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  Star
 } from 'lucide-react';
 import ConsultationModal from './ConsultationModal';
 
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const services = [
     {
       icon: Code,
@@ -92,6 +96,45 @@ const Services = () => {
       image: 'https://images.pexels.com/photos/7688336/pexels-photo-7688336.jpeg?auto=compress&cs=tinysrgb&w=800'
     }
   ];
+
+   const testimonials = [
+    {
+      name: "Praful Nikam",
+      role: "Techno Friends",
+      content: "The team at Novapex Infohub delivered outstanding results, significantly improving our digital presence and customer interactions. Their expertise is unmatched in the industry.",
+      rating: 5,
+      // avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+      // project: "Enterprise SaaS Platform"
+    },
+    {
+      name: "Rahul D",
+      role: "Tech Luster",
+      content: "Novapex Infohub transformed our customer experience with their innovative digital solutions. Highly recommend their services for any business looking to enhance engagement.",
+      rating: 5,
+      // avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+      // project: "Cross-platform Mobile App"
+    }
+    // {
+    //   name: "Emily Rodriguez",
+    //   role: "Product Manager, CloudScale",
+    //   content: "Cloud migration reduced our infrastructure costs by 40% while improving performance. Their team made the complex transition completely seamless.",
+    //   rating: 4,
+    //   avatar: "https://randomuser.me/api/portraits/women/63.jpg",
+    //   project: "AWS Cloud Migration"
+    // }
+  ];
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => 
+      prev === testimonials.length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => 
+      prev === 0 ? testimonials.length - 1 : prev - 1
+    );
+  };
 
   return (
     <section id="services" className="relative py-20 overflow-hidden">
@@ -218,7 +261,78 @@ const Services = () => {
           </div>
         </div>
       </div>
+             {/* Customer Feedback Section */}
+        <div className="mt-24 bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-6">
+              <Quote className="h-8 w-8 text-blue-600" />
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              What Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Customer Feedback</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+             Our clients appreciate the exceptional digital services we provide.
+            </p>
+          </div>
+
+          {/* Testimonial Carousel */}
+          <div className="relative max-w-4xl mx-auto">
+            <div className="overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${currentTestimonial * 100}%)` }}
+              >
+                {testimonials.map((testimonial, index) => (
+                  <div key={index} className="w-full flex-shrink-0 px-4">
+                    <div className="bg-white p-8 rounded-2xl shadow-md border border-gray-100">
+                      <div className="flex items-center mb-6">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name}
+                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-blue-100"
+                        />
+                        <div>
+                          <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
+                          <p className="text-gray-600">{testimonial.role}</p>
+                          <p className="text-blue-600 text-sm mt-1">{testimonial.project}</p>
+                        </div>
+                      </div>
+                      <Quote className="h-6 w-6 text-blue-200 mb-4" />
+                      <p className="text-gray-700 text-lg mb-6">"{testimonial.content}"</p>
+                      <div className="flex items-center">
+                        {[...Array(5)].map((_, i) => (
+                          <Star 
+                            key={i}
+                            className={`h-5 w-5 ${i < testimonial.rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
+                          />
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Navigation Arrows */}
+            <button 
+              onClick={prevTestimonial}
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-blue-50 transition-colors"
+              aria-label="Previous testimonial"
+            >
+              <ChevronLeft className="h-6 w-6 text-blue-600" />
+            </button>
+            <button 
+              onClick={nextTestimonial}
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-blue-50 transition-colors"
+              aria-label="Next testimonial"
+            >
+              <ChevronRight className="h-6 w-6 text-blue-600" />
+            </button>
+          </div>
+
+          {/* Client Logos */}
       
+        </div>
       <ConsultationModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
