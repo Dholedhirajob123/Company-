@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { 
   Code, 
   Smartphone, 
@@ -22,6 +22,7 @@ import ConsultationModal from './ConsultationModal';
 const Services = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
   const services = [
     {
       icon: Code,
@@ -97,31 +98,21 @@ const Services = () => {
     }
   ];
 
-   const testimonials = [
+  const testimonials = [
     {
       name: "Praful Nikam",
       role: "Techno Friends",
       content: "The team at Novapex Infohub delivered outstanding results, significantly improving our digital presence and customer interactions. Their expertise is unmatched in the industry.",
       rating: 5,
-      // avatar: "https://randomuser.me/api/portraits/women/44.jpg",
-      // project: "Enterprise SaaS Platform"
+      avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     },
     {
       name: "Rahul D",
       role: "Tech Luster",
       content: "Novapex Infohub transformed our customer experience with their innovative digital solutions. Highly recommend their services for any business looking to enhance engagement.",
       rating: 5,
-      // avatar: "https://randomuser.me/api/portraits/men/32.jpg",
-      // project: "Cross-platform Mobile App"
+      avatar: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
     }
-    // {
-    //   name: "Emily Rodriguez",
-    //   role: "Product Manager, CloudScale",
-    //   content: "Cloud migration reduced our infrastructure costs by 40% while improving performance. Their team made the complex transition completely seamless.",
-    //   rating: 4,
-    //   avatar: "https://randomuser.me/api/portraits/women/63.jpg",
-    //   project: "AWS Cloud Migration"
-    // }
   ];
 
   const nextTestimonial = () => {
@@ -145,13 +136,13 @@ const Services = () => {
           alt="Modern office workspace"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-blue-50/90 to-purple-50/95"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-white/95 via-[#00C08B]/10 to-[#008C65]/10"></div>
       </div>
       
       {/* Decorative background elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
-      <div className="absolute top-0 right-0 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-[#00C08B]/20 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+      <div className="absolute top-0 right-0 w-72 h-72 bg-[#008C65]/20 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-72 h-72 bg-[#00C08B]/20 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Hero section with background image */}
@@ -163,7 +154,7 @@ const Services = () => {
               alt="Modern office workspace"
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-purple-900/80"></div>
+            <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-[#00C08B]/70 to-[#008C65]/80"></div>
           </div>
           
           <div className="relative z-10">
@@ -171,7 +162,7 @@ const Services = () => {
               <Settings className="h-8 w-8 text-white" />
             </div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">Services</span>
+              Our <span style={{ color: "#000" }}>Services</span>
             </h2>
             <p className="text-xl text-gray-100 max-w-4xl mx-auto leading-relaxed">
               We offer comprehensive software development services to help businesses 
@@ -186,7 +177,7 @@ const Services = () => {
             return (
               <div 
                 key={index}
-                className="group relative bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2"
+                className="group relative bg-white/80 backdrop-blur-sm border border-white/20 rounded-2xl overflow-hidden hover:shadow-2xl hover:shadow-[#00C08B]/10 transition-all duration-500 hover:-translate-y-2"
               >
                 {/* Service image background */}
                 <div className="relative h-48 overflow-hidden">
@@ -198,31 +189,23 @@ const Services = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   
                   {/* Icon overlay */}
-                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-gradient-to-r group-hover:from-blue-600 group-hover:to-purple-600 transition-all duration-300">
-                    <IconComponent className="h-6 w-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
+                  <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm w-12 h-12 rounded-xl flex items-center justify-center group-hover:bg-[#00C08B] transition-all duration-300">
+                    <IconComponent className="h-6 w-6 text-[#00C08B] group-hover:text-white transition-colors duration-300" />
                   </div>
                 </div>
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#00C08B] transition-colors duration-300">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
-                  
-                  {/* Learn more link */}
-                  <div className="flex items-center text-blue-600 font-semibold group-hover:text-purple-600 transition-colors duration-300">
-                    <span className="text-sm">Learn More</span>
-                    <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
                 </div>
 
                 {/* Hover effect border */}
-                <div className="absolute inset-0 border-2 border-transparent group-hover:border-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-400 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#00C08B] rounded-2xl transition-all duration-300 pointer-events-none"></div>
               </div>
             );
           })}
@@ -230,7 +213,7 @@ const Services = () => {
 
         {/* Enhanced CTA Section */}
         <div className="mt-20 relative">
-          <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 rounded-3xl p-12 text-center text-white relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#00C08B] via-[#00A87A] to-[#008C65] rounded-3xl p-12 text-center text-white relative overflow-hidden">
             {/* Background pattern */}
             <div className="absolute inset-0 opacity-10">
               <div className="absolute top-0 left-0 w-40 h-40 bg-white rounded-full -translate-x-20 -translate-y-20"></div>
@@ -249,7 +232,7 @@ const Services = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-white text-blue-600 px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
+                  className="bg-white text-[#00C08B] px-8 py-4 rounded-full font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 flex items-center justify-center"
                 >
                   <span>Get Free Consultation</span>
                   <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -260,18 +243,18 @@ const Services = () => {
             </div>
           </div>
         </div>
-      </div>
-             {/* Customer Feedback Section */}
+
+        {/* Customer Feedback Section */}
         <div className="mt-24 bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl">
           <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full mb-6">
-              <Quote className="h-8 w-8 text-blue-600" />
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-[#00C08B]/10 rounded-full mb-6">
+              <Quote className="h-8 w-8 text-[#00C08B]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              What Our <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Customer Feedback</span>
+              <span style={{ color: "#00C08B" }}>Customer Feedback</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-             Our clients appreciate the exceptional digital services we provide.
+              Our clients appreciate the exceptional digital services we provide.
             </p>
           </div>
 
@@ -289,15 +272,14 @@ const Services = () => {
                         <img 
                           src={testimonial.avatar} 
                           alt={testimonial.name}
-                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-blue-100"
+                          className="w-14 h-14 rounded-full object-cover mr-4 border-2 border-[#00C08B]/30"
                         />
                         <div>
                           <h4 className="font-bold text-gray-900">{testimonial.name}</h4>
                           <p className="text-gray-600">{testimonial.role}</p>
-                          <p className="text-blue-600 text-sm mt-1">{testimonial.project}</p>
                         </div>
                       </div>
-                      <Quote className="h-6 w-6 text-blue-200 mb-4" />
+                      <Quote className="h-6 w-6 text-[#00C08B]/30 mb-4" />
                       <p className="text-gray-700 text-lg mb-6">"{testimonial.content}"</p>
                       <div className="flex items-center">
                         {[...Array(5)].map((_, i) => (
@@ -316,23 +298,22 @@ const Services = () => {
             {/* Navigation Arrows */}
             <button 
               onClick={prevTestimonial}
-              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-blue-50 transition-colors"
+              className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-[#00C08B]/10 transition-colors"
               aria-label="Previous testimonial"
             >
-              <ChevronLeft className="h-6 w-6 text-blue-600" />
+              <ChevronLeft className="h-6 w-6 text-[#00C08B]" />
             </button>
             <button 
               onClick={nextTestimonial}
-              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-blue-50 transition-colors"
+              className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-[#00C08B]/10 transition-colors"
               aria-label="Next testimonial"
             >
-              <ChevronRight className="h-6 w-6 text-blue-600" />
+              <ChevronRight className="h-6 w-6 text-[#00C08B]" />
             </button>
           </div>
-
-          {/* Client Logos */}
-      
         </div>
+      </div>
+      
       <ConsultationModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 

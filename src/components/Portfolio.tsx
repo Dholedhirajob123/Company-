@@ -5,7 +5,11 @@ import {
   Globe, Phone, MapPin, Clock, Star, ChevronRight,
   Layout, Server, Cpu, Smartphone, BarChart2, Award,
   Dumbbell, BookOpen, ShoppingCart, Clipboard, Search,
-  Truck, MessageSquare, Activity
+  Truck, MessageSquare, Activity,
+  Store,
+  CreditCard,
+  ShoppingBag,
+  Utensils
 } from 'lucide-react';
 
 const Portfolio = () => {
@@ -29,402 +33,544 @@ const Portfolio = () => {
     'Service',
     'E-commerce',
     'Booking',
-      'Lagu Udhyog papad' 
+  
   ];
 
   const projects = [
     // Restaurant Project
     {
       id: 1,
-      title: 'Delicious Bites Restaurant Website',
+      title: 'Restaurant Platform',
       category: 'Restaurant',
-      description: 'A modern restaurant website with online menu, table reservations, food ordering, and customer reviews system.',
-      image: 'https://images.pexels.com/photos/1581384/pexels-photo-1581384.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],
+      description: 'A complete digital solution for restaurants with online food ordering, table booking, and kitchen management.',
+      image: 'https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'Razorpay'],
       duration: '3 months',
       team: '4 developers',
-      features: ['Online Menu', 'Table Booking', 'Food Delivery', 'Customer Reviews'],
+      features: ['Online Ordering', 'Table Reservations', 'Kitchen Dashboard', 'Delivery Tracking'],
       detailedInfo: {
-        overview: 'A comprehensive restaurant website that transforms the dining experience with online ordering, table reservations, and seamless customer engagement features.',
-        challenge: 'Traditional restaurants struggled with manual booking systems, limited online presence, and difficulty managing orders during peak hours.',
-        solution: 'We created an all-in-one restaurant platform with real-time table booking, online food ordering with payment integration, and customer review management.',
+        overview: 'Foodiez is a modern restaurant platform that enables customers to order food online, reserve tables, and track their deliveries in real-time while helping restaurants manage operations efficiently.',
+        challenge: 'Restaurants faced challenges with handling phone-based orders, limited visibility into table availability, and poor coordination between front-office and kitchen staff.',
+        solution: 'We developed a robust system with online ordering, table booking, real-time kitchen dashboards, and delivery tracking to streamline the entire workflow.',
         workflow: [
-          'Restaurant Requirements Analysis',
-          'Menu & Booking System Design',
+          'Requirement Analysis',
+          'Menu & Ordering System',
+          'Table Booking Module',
+          'Kitchen Management Dashboard',
           'Payment Gateway Integration',
-          'Mobile-Responsive Development',
-          'Order Management System',
-          'Customer Review Platform',
-          'Staff Training & Setup',
-          'Launch & Marketing Support'
+          'Delivery Tracking Setup',
+          'Testing & QA',
+          'Deployment & Support'
         ],
         keyFeatures: [
           {
-            title: 'Interactive Menu',
-            description: 'Digital menu with high-quality images, descriptions, and real-time pricing',
-            icon: <Layout className="h-5 w-5 text-blue-600" />
-          },
-          {
-            title: 'Table Reservation System',
-            description: 'Real-time table booking with confirmation and reminder notifications',
-            icon: <Calendar className="h-5 w-5 text-blue-600" />
-          },
-          {
             title: 'Online Food Ordering',
-            description: 'Complete ordering system with payment processing and delivery tracking',
-            icon: <Smartphone className="h-5 w-5 text-blue-600" />
+            description: 'Easy menu browsing, customization, and online order placement',
+            icon: <ShoppingBag className="h-5 w-5" />
           },
           {
-            title: 'Customer Reviews & Ratings',
-            description: 'Integrated review system to build trust and improve service quality',
-            icon: <Star className="h-5 w-5 text-blue-600" />
+            title: 'Table Reservations',
+            description: 'Customers can book tables in advance with live availability',
+            icon: <Calendar className="h-5 w-5" />
+          },
+          {
+            title: 'Kitchen Dashboard',
+            description: 'Real-time order updates and status tracking for chefs',
+            icon: <Utensils className="h-5 w-5" />
+          },
+          {
+            title: 'Delivery Tracking',
+            description: 'Track food delivery with live status updates',
+            icon: <Truck className="h-5 w-5" />
           }
         ],
         results: [
-          { value: '250%', label: 'Increase in online orders' },
-          { value: '80%', label: 'Reduction in booking errors' },
-          { value: '4.8/5', label: 'Customer satisfaction' },
-          { value: '60%', label: 'Increase in revenue' }
+          { value: '60%', label: 'Increase in online orders' },
+          { value: '2x', label: 'Faster table turnovers' },
+          { value: '35%', label: 'Reduction in order errors' },
+          { value: '4.8/5', label: 'Customer satisfaction score' }
         ],
         testimonials: [
           {
-            quote: "This platform transformed our restaurant operations completely. Online orders now account for 40% of our revenue.",
-            author: "Michael Chen, Restaurant Owner"
+            quote: "Foodiez transformed our restaurant operations. Online orders doubled and our table reservations are now fully automated.",
+            author: "Priya Sharma, Restaurant Owner"
+          },
+          {
+            quote: "The kitchen dashboard helped us reduce errors and serve faster. Our chefs love it!",
+            author: "Rahul Verma, Head Chef"
           }
         ]
       }
     },
-   
-  {
-  id: 1,
-  title: 'FitTrack Gym Management System',
-  category: 'Gym',
-  description: 'A comprehensive gym management platform with member tracking, class scheduling, workout analytics, and payment processing.',
-  image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],
-  duration: '4 months',
-  team: '5 developers',
-  features: ['Member Management', 'Class Scheduling', 'Workout Tracking', 'Progress Analytics'],
-  detailedInfo: {
-    overview: 'An all-in-one gym management solution that helps fitness centers streamline operations, enhance member experience, and track performance metrics with digital tools.',
-    challenge: 'Gyms were struggling with manual member management, inefficient class scheduling, and lacked tools to track member progress and engagement.',
-    solution: 'We developed a comprehensive system with member portals, trainer dashboards, real-time class scheduling, and detailed workout analytics.',
-    workflow: [
-      'Gym Requirements Analysis',
-      'Member Management System Design',
-      'Class Scheduling Integration',
-      'Workout Tracking Development',
-      'Payment Processing Setup',
-      'Mobile App Development',
-      'Staff Training & Onboarding',
-      'Launch & Support'
-    ],
-    keyFeatures: [
-      {
-        title: 'Member Portal',
-        description: 'Personalized dashboards with workout history, progress tracking, and payment management',
-        icon: <Users className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Class Scheduling',
-        description: 'Real-time class booking with capacity management and waitlist features',
-        icon: <Calendar className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Workout Analytics',
-        description: 'Detailed performance metrics and visual progress tracking',
-        icon: <Activity className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Trainer Dashboard',
-        description: 'Tools for client management and personalized workout plans',
-        icon: <Dumbbell className="h-5 w-5 text-blue-600" />
+    {
+      id: 2,
+      title: 'Citi Offers - E-commerce Platform',
+      category: 'E-commerce',
+      description: 'A next-gen e-commerce marketplace offering a wide range of products, fast delivery, secure payments, and personalized shopping experiences.',
+      image: 'https://images.pexels.com/photos/5632402/pexels-photo-5632402.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe', 'AWS'],
+      duration: '6 months',
+      team: '8 developers',
+      features: ['Product Catalog', 'Personalized Recommendations', 'Cart & Checkout', 'Order Tracking', 'Vendor Dashboard'],
+      detailedInfo: {
+        overview: 'Citi Offers is a robust e-commerce marketplace built to deliver a seamless shopping experience, connecting buyers and sellers with secure, scalable, and feature-rich digital tools.',
+        challenge: 'Customers demanded a reliable online shopping solution with a smooth user interface, quick order processing, and a wide variety of products. Existing platforms lacked personalization and vendor-friendly tools.',
+        solution: 'We designed and developed a scalable multi-vendor platform with personalized shopping, AI-driven product recommendations, and streamlined logistics integration.',
+        workflow: [
+          'Market Research & Competitor Analysis',
+          'Product Catalog & Vendor Integration',
+          'Shopping Cart & Secure Payments',
+          'AI Recommendation System',
+          'Order Tracking Development',
+          'Mobile App Development',
+          'Logistics & Delivery Integration',
+          'Launch & Ongoing Support'
+        ],
+        keyFeatures: [
+          {
+            title: 'Smart Product Catalog',
+            description: 'Organized product listings with advanced filters and search',
+            icon: <ShoppingCart className="h-5 w-5" />
+          },
+          {
+            title: 'Personalized Recommendations',
+            description: 'AI-powered suggestions tailored to user preferences',
+            icon: <Star className="h-5 w-5" />
+          },
+          {
+            title: 'Order Tracking',
+            description: 'Real-time updates on shipment and delivery status',
+            icon: <Truck className="h-5 w-5" />
+          },
+          {
+            title: 'Vendor Dashboard',
+            description: 'Tools for sellers to manage inventory, pricing, and promotions',
+            icon: <Store className="h-5 w-5" />
+          }
+        ],
+        results: [
+          {
+            value: '1M+',
+            label: 'Active Users within first year'
+          },
+          {
+            value: '50K+',
+            label: 'Orders processed monthly'
+          },
+          {
+            value: '30%',
+            label: 'Increase in vendor revenue'
+          },
+          {
+            value: '4.8/5',
+            label: 'Average customer satisfaction score'
+          }
+        ],
+        testimonials: [
+          {
+            quote: "Citi Offers transformed our online shopping experience. The speed, recommendations, and tracking are on par with global giants.",
+            author: "Ramesh Patel, Vendor Partner"
+          },
+          {
+            quote: "I switched from other e-commerce apps to Citi Offers – the personalized deals and fast delivery are unbeatable!",
+            author: "Priya Sharma, Customer"
+          }
+        ]
       }
-    ],
-    results: [
-      {
-        value: '90%',
-        label: 'Member retention rate'
-      },
-      {
-        value: '3x',
-        label: 'More class bookings'
-      },
-      {
-        value: '40%',
-        label: 'Reduced administrative work'
-      },
-      {
-        value: '4.9/5',
-        label: 'Member satisfaction score'
+    },
+    {
+      id: 3,
+      title: 'FitTrack Gym Management System',
+      category: 'Gym',
+      description: 'A comprehensive gym management platform with member tracking, class scheduling, workout analytics, and payment processing.',
+      image: 'https://images.pexels.com/photos/1552242/pexels-photo-1552242.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Node.js', 'Stripe', 'MongoDB'],
+      duration: '4 months',
+      team: '5 developers',
+      features: ['Member Management', 'Class Scheduling', 'Workout Tracking', 'Progress Analytics'],
+      detailedInfo: {
+        overview: 'An all-in-one gym management solution that helps fitness centers streamline operations, enhance member experience, and track performance metrics with digital tools.',
+        challenge: 'Gyms were struggling with manual member management, inefficient class scheduling, and lacked tools to track member progress and engagement.',
+        solution: 'We developed a comprehensive system with member portals, trainer dashboards, real-time class scheduling, and detailed workout analytics.',
+        workflow: [
+          'Gym Requirements Analysis',
+          'Member Management System Design',
+          'Class Scheduling Integration',
+          'Workout Tracking Development',
+          'Payment Processing Setup',
+          'Mobile App Development',
+          'Staff Training & Onboarding',
+          'Launch & Support'
+        ],
+        keyFeatures: [
+          {
+            title: 'Member Portal',
+            description: 'Personalized dashboards with workout history, progress tracking, and payment management',
+            icon: <Users className="h-5 w-5" />
+          },
+          {
+            title: 'Class Scheduling',
+            description: 'Real-time class booking with capacity management and waitlist features',
+            icon: <Calendar className="h-5 w-5" />
+          },
+          {
+            title: 'Workout Analytics',
+            description: 'Detailed performance metrics and visual progress tracking',
+            icon: <Activity className="h-5 w-5" />
+          },
+          {
+            title: 'Trainer Dashboard',
+            description: 'Tools for client management and personalized workout plans',
+            icon: <Dumbbell className="h-5 w-5" />
+          }
+        ],
+        results: [
+          {
+            value: '90%',
+            label: 'Member retention rate'
+          },
+          {
+            value: '3x',
+            label: 'More class bookings'
+          },
+          {
+            value: '40%',
+            label: 'Reduced administrative work'
+          },
+          {
+            value: '4.9/5',
+            label: 'Member satisfaction score'
+          }
+        ],
+        testimonials: [
+          {
+            quote: "FitTrack revolutionized how we manage our gym. Member engagement has never been higher and our staff spends 60% less time on admin tasks.",
+            author: "Sarah Johnson, Gym Owner"
+          }
+        ]
       }
-    ],
-    testimonials: [
-      {
-        quote: "FitTrack revolutionized how we manage our gym. Member engagement has never been higher and our staff spends 60% less time on admin tasks.",
-        author: "Sarah Johnson, Gym Owner"
-      }
-    ]
-  }
-},
-{
-  id: 3,
-  title: 'EduConnect School Portal',
-  category: 'Education',
-  description: 'Complete school management system with public website, parent portal, teacher dashboard, and administrative ERP features.',
-  image: 'https://images.pexels.com/photos/4144225/pexels-photo-4144225.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'JWT Auth'],
-  duration: '6 months',
-  team: '8 developers',
-  features: [
-    'School Website CMS',
-    'ERP Login System',
-    'Grade Management',
-    'Attendance Tracking',
-    'Fee Payment Portal',
-    'Parent-Teacher Communication'
-  ],
-  detailedInfo: {
-    overview: 'A comprehensive education platform combining a modern school website with a powerful ERP system for complete school administration, student management, and parent engagement.',
-    challenge: 'Schools needed an integrated solution that combined their public-facing website with secure internal management tools while maintaining data consistency across platforms.',
-    solution: 'Developed a unified platform with role-based access (admin, teacher, student, parent) connecting the public website with backend ERP functionality through a secure login system.',
-    workflow: [
-      'Stakeholder interviews with school administrators',
-      'User journey mapping for all roles',
-      'Public website CMS development',
-      'ERP backend architecture',
-      'Role-based authentication system',
-      'Grade and attendance modules',
-      'Payment gateway integration',
-      'Training and deployment'
-    ],
-    keyFeatures: [
-      {
-        title: 'School Website',
-        description: 'Customizable CMS for school information, news, and event management',
-        icon: <Globe className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'ERP Login System',
-        description: 'Secure multi-role authentication with SSO capabilities',
-        icon: <Shield className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Admin Dashboard',
-        description: 'Complete school management with student records, staff management, and reporting',
-        icon: <Database className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Parent Portal',
-        description: 'Real-time access to grades, attendance, and school communications',
-        icon: <Users className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Teacher Workspace',
-        description: 'Grade submission, attendance marking, and lesson planning tools',
-        icon: <BookOpen className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Fee Management',
-        description: 'Online payment processing with receipts and payment history',
-        // icon: <CreditCard className="h-5 w-5 text-blue-600" />
-      }
-    ],
-    results: [
-      {
-        value: '75%',
-        label: 'Reduction in administrative workload'
-      },
-      {
-        value: '95%',
-        label: 'Parent engagement rate'
-      },
-      {
-        value: '100+',
-        label: 'Schools implemented'
-      },
-      {
-        value: '4.9/5',
-        label: 'User satisfaction score'
-      }
-    ],
-    testimonials: [
-      {
-        quote: "EduConnect transformed how our school operates. The seamless integration between our website and management system saved us countless hours.",
-        author: "Dr. Robert Johnson, School Principal"
-      },
-      {
-        quote: "As a parent, I love being able to see my child's progress in real-time through the portal.",
-        author: "Lisa Thompson, Parent"
-      }
-    ]
-  }
-},
-{
-  id: 4,
-  title: 'CleanPro Manpower Services',
-  category: 'Service',
-  description: 'On-demand housekeeping and manpower service platform connecting clients with professional cleaners and service providers.',
-  image: 'https://images.pexels.com/photos/5081392/pexels-photo-5081392.jpeg?auto=compress&cs=tinysrgb&w=1200',
-  technologies: ['React', 'Node.js', 'MongoDB', 'Google Maps API', 'Twilio'],
-  duration: '5 months',
-  team: '5 developers',
-  features: [
-    'Service Booking System',
-    'Worker Management',
-    'Real-time Tracking',
-    'Quality Assurance',
-    'Payment Processing',
-    'Client Portal'
-  ],
-  detailedInfo: {
-    overview: 'A complete digital solution for housekeeping and manpower services that streamlines booking, dispatching, and quality control for service businesses.',
-    challenge: 'Service providers struggled with manual booking processes, inefficient worker dispatch, and lacked transparency for clients about service status.',
-    solution: 'Developed a mobile-friendly platform with real-time booking, GPS tracking of workers, quality assurance checks, and automated payment processing.',
-    workflow: [
-      'Service provider interviews',
-      'Booking flow design',
-      'Worker management system',
-      'Real-time tracking integration',
-      'Quality control features',
-      'Payment processing setup',
-      'Mobile app development',
-      'Deployment and training'
-    ],
-    keyFeatures: [
-      {
-        title: 'Instant Booking',
-        description: '24/7 online booking with immediate confirmation',
-        icon: <Calendar className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Worker Management',
-        description: 'Complete staff profiles with skills, ratings and availability',
-        icon: <Users className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Live Tracking',
-        description: 'Real-time GPS tracking of service providers',
-        icon: <MapPin className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Quality Control',
-        description: 'Post-service checklists and client ratings',
-        icon: <CheckCircle className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Flexible Payments',
-        description: 'Multiple payment options with automated invoicing',
-        // icon: <CreditCard className="h-5 w-5 text-blue-600" />
-      },
-      {
-        title: 'Client Portal',
-        description: 'Service history, receipts and rebooking',
-        icon: <Clipboard className="h-5 w-5 text-blue-600" />
-      }
-    ],
-    results: [
-      {
-        value: '3x',
-        label: 'More bookings'
-      },
-      {
-        value: '90%',
-        label: 'On-time arrivals'
-      },
-      {
-        value: '4.8/5',
-        label: 'Average service rating'
-      },
-      {
-        value: '50%',
-        label: 'Reduced admin costs'
-      }
-    ],
-    testimonials: [
-      {
-        quote: "CleanPro transformed our small cleaning business into a professional service with 3x more clients in just 6 months.",
-        author: "Maria Gonzalez, Cleaning Business Owner"
-      },
-      {
-        quote: "I love being able to see exactly when my cleaner will arrive and track their progress to my home.",
-        author: "David Wilson, Regular Client"
-      }
-    ]
-  }
-},
- {
-    id: 5,
-    title: 'Lagu Udhyog Papad Center Website',
-    category: 'Lagu Udhyog',
-    description: 'A complete online presence for a papad manufacturing business with product showcase, order management, and distributor network.',
-    image: 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1200',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Payment Gateway'],
-    duration: '2 months',
-    team: '3 developers',
-    features: ['Product Catalog', 'Online Orders', 'Distributor Portal', 'Bulk Order System'],
-    detailedInfo: {
-      overview: 'A specialized website for a papad manufacturing business that showcases their products, handles online orders, and manages distributor relationships.',
-      challenge: 'Traditional papad businesses lacked digital presence, making it difficult to reach new customers and manage bulk orders efficiently.',
-      solution: 'We created a comprehensive platform with product showcase, online ordering system, and a dedicated portal for distributors to place bulk orders.',
-      workflow: [
-        'Business Requirements Analysis',
-        'Product Catalog Design',
-        'Order Management System',
-        'Distributor Portal Development',
-        'Payment Gateway Integration',
-        'Quality Testing',
-        'Launch & Training'
+    },
+    {
+      id: 4,
+      title: 'EduConnect School Portal',
+      category: 'Education',
+      description: 'Complete school management system with public website, parent portal, teacher dashboard, and administrative ERP features.',
+      image: 'https://images.pexels.com/photos/4144225/pexels-photo-4144225.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Node.js', 'PostgreSQL', 'AWS', 'JWT Auth'],
+      duration: '6 months',
+      team: '8 developers',
+      features: [
+        'School Website CMS',
+        'ERP Login System',
+        'Grade Management',
+        'Attendance Tracking',
+        'Fee Payment Portal',
+        'Parent-Teacher Communication'
       ],
-      keyFeatures: [
-        {
-          title: 'Product Showcase',
-          description: 'Beautiful display of papad varieties with detailed descriptions and images',
-          icon: <ShoppingCart className="h-5 w-5 text-blue-600" />
-        },
-        {
-          title: 'Online Ordering',
-          description: 'Easy ordering system for retail and bulk customers',
-          icon: <Clipboard className="h-5 w-5 text-blue-600" />
-        },
-        {
-          title: 'Distributor Portal',
-          description: 'Dedicated area for distributors to place and track bulk orders',
-          icon: <Truck className="h-5 w-5 text-blue-600" />
-        },
-        {
-          title: 'Recipe Section',
-          description: 'Creative recipes using their papad products to increase engagement',
-          icon: <BookOpen className="h-5 w-5 text-blue-600" />
-        }
+      detailedInfo: {
+        overview: 'A comprehensive education platform combining a modern school website with a powerful ERP system for complete school administration, student management, and parent engagement.',
+        challenge: 'Schools needed an integrated solution that combined their public-facing website with secure internal management tools while maintaining data consistency across platforms.',
+        solution: 'Developed a unified platform with role-based access (admin, teacher, student, parent) connecting the public website with backend ERP functionality through a secure login system.',
+        workflow: [
+          'Stakeholder interviews with school administrators',
+          'User journey mapping for all roles',
+          'Public website CMS development',
+          'ERP backend architecture',
+          'Role-based authentication system',
+          'Grade and attendance modules',
+          'Payment gateway integration',
+          'Training and deployment'
+        ],
+        keyFeatures: [
+          {
+            title: 'School Website',
+            description: 'Customizable CMS for school information, news, and event management',
+            icon: <Globe className="h-5 w-5" />
+          },
+          {
+            title: 'ERP Login System',
+            description: 'Secure multi-role authentication with SSO capabilities',
+            icon: <Shield className="h-5 w-5" />
+          },
+          {
+            title: 'Admin Dashboard',
+            description: 'Complete school management with student records, staff management, and reporting',
+            icon: <Database className="h-5 w-5" />
+          },
+          {
+            title: 'Parent Portal',
+            description: 'Real-time access to grades, attendance, and school communications',
+            icon: <Users className="h-5 w-5" />
+          },
+          {
+            title: 'Teacher Workspace',
+            description: 'Grade submission, attendance marking, and lesson planning tools',
+            icon: <BookOpen className="h-5 w-5" />
+          },
+          {
+            title: 'Fee Management',
+            description: 'Online payment processing with receipts and payment history',
+            icon: <CreditCard className="h-5 w-5" />
+          }
+        ],
+        results: [
+          {
+            value: '75%',
+            label: 'Reduction in administrative workload'
+          },
+          {
+            value: '95%',
+            label: 'Parent engagement rate'
+          },
+          {
+            value: '100+',
+            label: 'Schools implemented'
+          },
+          {
+            value: '4.9/5',
+            label: 'User satisfaction score'
+          }
+        ],
+        testimonials: [
+          {
+            quote: "EduConnect transformed how our school operates. The seamless integration between our website and management system saved us countless hours.",
+            author: "Dr. Robert Johnson, School Principal"
+          },
+          {
+            quote: "As a parent, I love being able to see my child's progress in real-time through the portal.",
+            author: "Lisa Thompson, Parent"
+          }
+        ]
+      }
+    },
+    {
+      id: 5,
+      title: 'CleanPro Manpower Services',
+      category: 'Service',
+      description: 'On-demand housekeeping and manpower service platform connecting clients with professional cleaners and service providers.',
+      image: 'https://images.pexels.com/photos/5081392/pexels-photo-5081392.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Google Maps API', 'Twilio'],
+      duration: '5 months',
+      team: '5 developers',
+      features: [
+        'Service Booking System',
+        'Worker Management',
+        'Real-time Tracking',
+        'Quality Assurance',
+        'Payment Processing',
+        'Client Portal'
       ],
-      results: [
-        { value: '200%', label: 'Increase in orders' },
-        { value: '50+', label: 'New distributors onboarded' },
-        { value: '4.7/5', label: 'Customer satisfaction' },
-        { value: '30%', label: 'Reduction in order processing time' }
-      ],
-      testimonials: [
-        {
-          quote: "This website transformed our small papad business. We now receive orders from across the region and our distributor network has expanded significantly.",
-          author: "Rajesh Patel, Papad Center Owner"
-        }
-      ]
+      detailedInfo: {
+        overview: 'A complete digital solution for housekeeping and manpower services that streamlines booking, dispatching, and quality control for service businesses.',
+        challenge: 'Service providers struggled with manual booking processes, inefficient worker dispatch, and lacked transparency for clients about service status.',
+        solution: 'Developed a mobile-friendly platform with real-time booking, GPS tracking of workers, quality assurance checks, and automated payment processing.',
+        workflow: [
+          'Service provider interviews',
+          'Booking flow design',
+          'Worker management system',
+          'Real-time tracking integration',
+          'Quality control features',
+          'Payment processing setup',
+          'Mobile app development',
+          'Deployment and training'
+        ],
+        keyFeatures: [
+          {
+            title: 'Instant Booking',
+            description: '24/7 online booking with immediate confirmation',
+            icon: <Calendar className="h-5 w-5" />
+          },
+          {
+            title: 'Worker Management',
+            description: 'Complete staff profiles with skills, ratings and availability',
+            icon: <Users className="h-5 w-5" />
+          },
+          {
+            title: 'Live Tracking',
+            description: 'Real-time GPS tracking of service providers',
+            icon: <MapPin className="h-5 w-5" />
+          },
+          {
+            title: 'Quality Control',
+            description: 'Post-service checklists and client ratings',
+            icon: <CheckCircle className="h-5 w-5" />
+          },
+          {
+            title: 'Flexible Payments',
+            description: 'Multiple payment options with automated invoicing',
+            icon: <CreditCard className="h-5 w-5" />
+          },
+          {
+            title: 'Client Portal',
+            description: 'Service history, receipts and rebooking',
+            icon: <Clipboard className="h-5 w-5" />
+          }
+        ],
+        results: [
+          {
+            value: '3x',
+            label: 'More bookings'
+          },
+          {
+            value: '90%',
+            label: 'On-time arrivals'
+          },
+          {
+            value: '4.8/5',
+            label: 'Average service rating'
+          },
+          {
+            value: '50%',
+            label: 'Reduced admin costs'
+          }
+        ],
+        testimonials: [
+          {
+            quote: "CleanPro transformed our small cleaning business into a professional service with 3x more clients in just 6 months.",
+            author: "Maria Gonzalez, Cleaning Business Owner"
+          },
+          {
+            quote: "I love being able to see exactly when my cleaner will arrive and track their progress to my home.",
+            author: "David Wilson, Regular Client"
+          }
+        ]
+      }
+    },
+    {
+      id: 6,
+      title: 'Lagu Udhyog Papad Center Website',
+      category: 'Lagu Udhyog',
+      description: 'A complete online presence for a papad manufacturing business with product showcase, order management, and distributor network.',
+      image: 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Node.js', 'MongoDB', 'Payment Gateway'],
+      duration: '2 months',
+      team: '3 developers',
+      features: ['Product Catalog', 'Online Orders', 'Distributor Portal', 'Bulk Order System'],
+      detailedInfo: {
+        overview: 'A specialized website for a papad manufacturing business that showcases their products, handles online orders, and manages distributor relationships.',
+        challenge: 'Traditional papad businesses lacked digital presence, making it difficult to reach new customers and manage bulk orders efficiently.',
+        solution: 'We created a comprehensive platform with product showcase, online ordering system, and a dedicated portal for distributors to place bulk orders.',
+        workflow: [
+          'Business Requirements Analysis',
+          'Product Catalog Design',
+          'Order Management System',
+          'Distributor Portal Development',
+          'Payment Gateway Integration',
+          'Quality Testing',
+          'Launch & Training'
+        ],
+        keyFeatures: [
+          {
+            title: 'Product Showcase',
+            description: 'Beautiful display of papad varieties with detailed descriptions and images',
+            icon: <ShoppingCart className="h-5 w-5" />
+          },
+          {
+            title: 'Online Ordering',
+            description: 'Easy ordering system for retail and bulk customers',
+            icon: <Clipboard className="h-5 w-5" />
+          },
+          {
+            title: 'Distributor Portal',
+            description: 'Dedicated area for distributors to place and track bulk orders',
+            icon: <Truck className="h-5 w-5" />
+          },
+          {
+            title: 'Recipe Section',
+            description: 'Creative recipes using their papad products to increase engagement',
+            icon: <BookOpen className="h-5 w-5" />
+          }
+        ],
+        results: [
+          { value: '200%', label: 'Increase in orders' },
+          { value: '50+', label: 'New distributors onboarded' },
+          { value: '4.7/5', label: 'Customer satisfaction' },
+          { value: '30%', label: 'Reduction in order processing time' }
+        ],
+        testimonials: [
+          {
+            quote: "This website transformed our small papad business. We now receive orders from across the region and our distributor network has expanded significantly.",
+            author: "Rajesh Patel, Papad Center Owner"
+          }
+        ]
+      }
+    },
+    {
+      id: 7,
+      title: 'BookEasy - Online Booking Platform',
+      category: 'Booking',
+      description: 'A seamless online booking platform for hotels, travel, and events with real-time availability, secure payments, and personalized recommendations.',
+      image: 'https://images.pexels.com/photos/374740/pexels-photo-374740.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe', 'Firebase'],
+      duration: '5 months',
+      team: '6 developers',
+      features: ['Hotel & Travel Booking', 'Event Reservations', 'Payment Gateway', 'User Reviews', 'Smart Recommendations'],
+      detailedInfo: {
+        overview: 'BookEasy is a one-stop booking solution designed to simplify reservations for hotels, travel packages, and events with real-time availability and secure payments.',
+        challenge: 'Users often faced issues with fragmented booking services, lack of real-time availability updates, and unreliable payment integrations.',
+        solution: 'We built a unified booking platform with multi-category reservations, real-time seat/room availability, smart recommendations, and secure payment integration.',
+        workflow: [
+          'Market Research & Requirement Gathering',
+          'Booking Flow Design',
+          'Availability & Inventory Integration',
+          'Payment Gateway Setup',
+          'Event & Travel Modules',
+          'User Reviews & Ratings',
+          'Mobile App Development',
+          'Testing & Deployment'
+        ],
+        keyFeatures: [
+          {
+            title: 'Unified Booking System',
+            description: 'Book hotels, events, and travel packages in one platform',
+            icon: <Calendar className="h-5 w-5" />
+          },
+          {
+            title: 'Real-Time Availability',
+            description: 'Instant updates on room availability and event seats',
+            icon: <Clock className="h-5 w-5" />
+          },
+          {
+            title: 'Smart Recommendations',
+            description: 'AI-driven suggestions based on user preferences and past bookings',
+            icon: <Star className="h-5 w-5" />
+          },
+          {
+            title: 'Secure Payments',
+            description: 'Integrated with Stripe & multiple wallets for safe checkout',
+            icon: <CreditCard className="h-5 w-5" />
+          },
+          {
+            title: 'User Reviews',
+            description: 'Ratings and feedback system for transparency and trust',
+            icon: <Users className="h-5 w-5" />
+          }
+        ],
+        results: [
+          { value: '500K+', label: 'Bookings in first year' },
+          { value: '70%', label: 'Returning users rate' },
+          { value: '40%', label: 'Faster booking process' },
+          { value: '4.9/5', label: 'Average user rating' }
+        ],
+        testimonials: [
+          {
+            quote: "BookEasy made my vacation planning so simple. I could book my hotel, event tickets, and travel in one place!",
+            author: "Ananya Mehta, Frequent Traveler"
+          },
+          {
+            quote: "As an event organizer, BookEasy helped me reach more customers and manage bookings effortlessly.",
+            author: "Karan Singh, Event Organizer"
+          }
+        ]
+      }
     }
-  },
-
-
-  
- 
-
-  
   ];
 
   const filteredProjects = filter === 'All' 
     ? projects 
     : projects.filter(project => project.category === filter);
 
-  const openProjectDetails = (project: React.SetStateAction<null>) => {
+  const openProjectDetails = (project) => {
     setSelectedProject(project);
     document.body.style.overflow = 'hidden';
     window.scrollTo(0, 0);
@@ -468,7 +614,7 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Our <span className="text-blue-600">Portfolio</span>
+            Our <span style={{ color: "#00C08B" }}>Portfolio</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Discover our diverse range of business websites and applications that showcase our expertise 
@@ -484,7 +630,7 @@ const Portfolio = () => {
               onClick={() => setFilter(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 ${
                 filter === category
-                  ? 'bg-blue-600 text-white shadow-md'
+                  ? 'bg-[#00C08B] text-white shadow-md'
                   : 'bg-white text-gray-700 hover:bg-gray-100 shadow-sm'
               }`}
             >
@@ -509,7 +655,7 @@ const Portfolio = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute top-4 left-4">
-                  <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
+                  <span className="bg-[#00C08B] text-white px-3 py-1 rounded-full text-sm font-medium shadow-md">
                     {project.category}
                   </span>
                 </div>
@@ -519,36 +665,12 @@ const Portfolio = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{project.title}</h3>
                 <p className="text-gray-600 mb-4 text-sm">{project.description}</p>
                 
-                <div className="flex items-center space-x-4 mb-4 text-sm text-gray-500">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="h-4 w-4" />
-                    <span>{project.duration}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4" />
-                    <span>{project.team}</span>
-                  </div>
-                </div>
-                
-                <div className="mb-4">
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech, index) => (
-                      <span 
-                        key={index}
-                        className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-                
                 <div className="mb-6">
                   <h4 className="font-semibold text-gray-900 mb-2 text-sm">Key Features:</h4>
                   <ul className="text-sm text-gray-600 space-y-1">
                     {project.features.map((feature, index) => (
                       <li key={index} className="flex items-center space-x-2">
-                        <ChevronRight className="h-3 w-3 text-blue-600 flex-shrink-0" />
+                        <ChevronRight className="h-3 w-3 text-[#00C08B] flex-shrink-0" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -558,17 +680,10 @@ const Portfolio = () => {
                 <div className="mt-auto flex space-x-3">
                   <button 
                     onClick={() => openProjectDetails(project)}
-                    className="flex-1 bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700 transition-colors duration-200 flex items-center justify-center space-x-2 text-sm font-medium"
+                    className="flex-1 bg-[#00C08B] text-white py-2 px-4 rounded-lg hover:bg-[#00a87a] transition-colors duration-200 flex items-center justify-center space-x-2 text-sm font-medium"
                   >
                     <ExternalLink className="h-4 w-4" />
                     <span>View Details</span>
-                  </button>
-                  <button 
-                    onClick={() => document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })}
-                    className="bg-gray-100 text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-200 transition-colors duration-200 flex items-center justify-center"
-                    aria-label="Contact us"
-                  >
-                    <Phone className="h-4 w-4" />
                   </button>
                 </div>
               </div>
@@ -588,7 +703,7 @@ const Portfolio = () => {
             <p className="text-gray-500">We don't have any projects in this category yet.</p>
             <button 
               onClick={() => setFilter('All')}
-              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="mt-4 inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-[#00C08B] hover:bg-[#00a87a] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#00C08B]"
             >
               View all projects
             </button>
@@ -599,19 +714,19 @@ const Portfolio = () => {
         <div className="mt-20 bg-white rounded-2xl p-8 shadow-lg">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-[#00C08B] mb-2">20+</div>
               <div className="text-gray-600">Websites Created</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
+              <div className="text-3xl font-bold text-[#00C08B] mb-2">10+</div>
               <div className="text-gray-600">Business Types</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">98%</div>
+              <div className="text-3xl font-bold text-[#00C08B] mb-2">98%</div>
               <div className="text-gray-600">Client Satisfaction</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-blue-600 mb-2">24/7</div>
+              <div className="text-3xl font-bold text-[#00C08B] mb-2">24/7</div>
               <div className="text-gray-600">Support Available</div>
             </div>
           </div>
@@ -667,7 +782,7 @@ const Portfolio = () => {
                 </div>
                 <div>
                   <div className="mb-4">
-                    <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                    <span className="bg-[#00C08B] bg-opacity-20 text-[#00a87a] px-3 py-1 rounded-full text-sm font-medium">
                       {selectedProject.category}
                     </span>
                   </div>
@@ -698,14 +813,14 @@ const Portfolio = () => {
               {/* Technologies */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
-                  <Code className="h-6 w-6 text-blue-600 mr-2" />
+                  <Code className="h-6 w-6 text-[#00C08B] mr-2" />
                   Technologies Used
                 </h3>
                 <div className="flex flex-wrap gap-3">
                   {selectedProject.technologies.map((tech, index) => (
                     <span 
                       key={index}
-                      className="bg-gradient-to-r from-blue-100 to-purple-100 text-gray-800 px-4 py-2 rounded-lg font-medium flex items-center"
+                      className="bg-[#00C08B] bg-opacity-10 text-[#00a87a] px-4 py-2 rounded-lg font-medium flex items-center"
                     >
                       {tech}
                     </span>
@@ -738,7 +853,7 @@ const Portfolio = () => {
               {/* Development Workflow */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                  <ArrowRight className="h-6 w-6 text-blue-600 mr-2" />
+                  <ArrowRight className="h-6 w-6 text-[#00C08B] mr-2" />
                   Development Process
                 </h3>
                 <div className="relative">
@@ -746,7 +861,7 @@ const Portfolio = () => {
                   <div className="space-y-8">
                     {selectedProject.detailedInfo.workflow.map((step, index) => (
                       <div key={index} className="relative pl-12">
-                        <div className="absolute left-5 top-0 h-6 w-6 rounded-full bg-blue-600 text-white flex items-center justify-center -ml-3">
+                        <div className="absolute left-5 top-0 h-6 w-6 rounded-full bg-[#00C08B] text-white flex items-center justify-center -ml-3">
                           {index + 1}
                         </div>
                         <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
@@ -765,8 +880,8 @@ const Portfolio = () => {
                   {selectedProject.detailedInfo.keyFeatures.map((feature, index) => (
                     <div key={index} className="bg-white border border-gray-200 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300">
                       <h4 className="font-bold text-gray-900 mb-2 flex items-center">
-                        {feature.icon}
-                        <span className="ml-2">{feature.title}</span>
+                        <span className="text-[#00C08B] mr-2">{feature.icon}</span>
+                        <span>{feature.title}</span>
                       </h4>
                       <p className="text-gray-600 text-sm">{feature.description}</p>
                     </div>
@@ -775,7 +890,7 @@ const Portfolio = () => {
               </div>
 
               {/* Results */}
-              <div className="bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-xl text-white mb-8">
+              <div className="bg-gradient-to-r from-[#00C08B] to-[#00a87a] p-8 rounded-xl text-white mb-8">
                 <h3 className="text-xl font-bold mb-6 flex items-center">
                   <BarChart2 className="h-6 w-6 mr-2" />
                   Measurable Results
@@ -796,10 +911,10 @@ const Portfolio = () => {
               {selectedProject.detailedInfo.testimonials && (
                 <div className="mb-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center">
-                    <Award className="h-6 w-6 text-blue-600 mr-2" />
+                    <Award className="h-6 w-6 text-[#00C08B] mr-2" />
                     Client Testimonials
                   </h3>
-                  <div className="bg-blue-50 p-6 rounded-xl">
+                  <div className="bg-[#00C08B] bg-opacity-10 p-6 rounded-xl">
                     <blockquote className="text-gray-700 italic mb-4">
                       "{selectedProject.detailedInfo.testimonials[0].quote}"
                     </blockquote>
@@ -809,34 +924,6 @@ const Portfolio = () => {
                   </div>
                 </div>
               )}
-
-              {/* CTA */}
-              <div className="text-center">
-                <h4 className="text-2xl font-bold text-gray-900 mb-4">Ready to Start Your Project?</h4>
-                <p className="text-gray-600 mb-6">Let us help you build a professional website that grows your business and engages your customers.</p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button 
-                    onClick={() => {
-                      closeProjectDetails();
-                      document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <Phone className="h-5 w-5" />
-                    <span>Book Free Consultation</span>
-                  </button>
-                  <button 
-                    onClick={() => {
-                      closeProjectDetails();
-                      document.querySelector('#services')?.scrollIntoView({ behavior: 'smooth' });
-                    }}
-                    className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-blue-600 hover:text-white transition-all duration-300 inline-flex items-center justify-center space-x-2"
-                  >
-                    <Globe className="h-5 w-5" />
-                    <span>View Our Services</span>
-                  </button>
-                </div>
-              </div>
             </div>
           </div>
         </div>

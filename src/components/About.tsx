@@ -7,24 +7,24 @@ const About = () => {
   const teamMembers = [
     {
       name: "Mr. Amol Harne",
-      // role: "Chief Technology Officer",
-      image: "https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg",
+      image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       description: "As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for a strong, client-centric organization. Amol oversees operations and ensures the delivery of exceptional services tailored to client needs.",
-      color: "blue"
+      role: "Chief Executive Officer & Founder",
+      color: "#00C08B"
     },
     {
       name: "Mrs. Mrunal Ghenge",
-      // role: "Chief Operating Officer",
-      image: "https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg",
-      description: "Mrunal is a creative thinker and problem solver. Her focus on design, quality, and user experience brings life to Novapex Infohub’s projects. She specializes in translating client visions into visually appealing, functional web applications.",
-      color: "purple"
+      image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
+      description: "Mrunal is a creative thinker and problem solver. Her focus on design, quality, and user experience brings life to Novapex Infohub's projects. She specializes in translating client visions into visually appealing, functional web applications.",
+      role: "Creative Director & Co-Founder",
+      color: "#00C08B"
     },
     {
       name: "Mrs. Rasika Aswar",
-      // role: "Head of Design",
-      image: "https://images.pexels.com/photos/3778876/pexels-photo-3778876.jpeg",
+      image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png",
       description: "Rasika is a dynamic leader with expertise in web development and project management. Her commitment to delivering excellence drives Novapex Infohub's innovative solutions. She plays a pivotal role in leading the technical team and ensuring projects are executed flawlessly.",
-      color: "green"
+      role: "Technical Lead & Co-Founder",
+      color: "#00C08B"
     },
   ];
 
@@ -41,7 +41,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            About <span className="text-blue-600">Novapex Infohub</span>
+            About <span style={{ color: "#00C08B" }}>Novapex Infohub</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             We are a forward-thinking software development company dedicated to 
@@ -53,7 +53,7 @@ const About = () => {
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-6">Our Story</h3>
             <p className="text-gray-600 mb-6">
-              Founded in 2020, Novapex Infohub emerged from a passion for technology and a vision to 
+              Novapex Infohub emerged from a passion for technology and a vision to 
               bridge the gap between complex business challenges and elegant software solutions. 
               Our team of expert developers, designers, and strategists work collaboratively to 
               deliver exceptional results.
@@ -63,20 +63,6 @@ const About = () => {
               long-lasting partnerships with our clients. Every project we undertake is 
               an opportunity to push boundaries and set new standards in software excellence.
             </p>
-            <div className="flex space-x-4">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">5+</div>
-                <div className="text-gray-600">Years Experience</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">50+</div>
-                <div className="text-gray-600">Team Members</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">25+</div>
-                <div className="text-gray-600">Countries Served</div>
-              </div>
-            </div>
             
             {/* Company Building Image */}
             <div className="mt-8 relative overflow-hidden rounded-2xl shadow-lg">
@@ -85,38 +71,34 @@ const About = () => {
                 alt="Modern corporate building" 
                 className="w-full h-64 object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h4 className="text-lg font-semibold">Novapex Infohub Headquarters</h4>
-                <p className="text-sm opacity-90">Innovation starts here</p>
-              </div>
             </div>
           </div>
-          {/* 2222 */}
+          
           <div className="space-y-8">
             {/* CEO Information Card */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <div className="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-6">
                 <div className="flex-shrink-0">
                   <img 
-                    src="https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=400" 
+                    src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png" 
                     alt="CEO Portrait" 
-                    className="w-24 h-24 rounded-full object-cover border-4 border-blue-100 shadow-lg"
+                    className="w-24 h-24 rounded-full object-cover border-4 border-[#00C08B] shadow-lg"
                   />
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h4 className="text-2xl font-bold text-gray-900 mb-2">Mr. Amol Harne</h4>
-                  <p className="text-blue-600 font-semibold mb-3">Chief Executive Officer & Founder</p>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
-                   As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for a strong, client-centric organization. Amol oversees operations and ensures the delivery of exceptional services tailored to client needs.
+                  <p className="text-[#00C08B] font-semibold mb-3">
+                    Chief Executive Officer & Founder
                   </p>
-                 
+                  <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                    As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for a strong, client-centric organization. Amol oversees operations and ensures the delivery of exceptional services tailored to client needs.
+                  </p>
                 </div>
               </div>
             </div>
             
             {/* Why Choose Us Card */}
-            <div className="bg-gradient-to-br from-blue-600 to-purple-600 rounded-2xl p-8 text-white">
+            <div className="bg-gradient-to-br from-[#00C08B] to-[#008C65] rounded-2xl p-8 text-white">
               <h4 className="text-2xl font-bold mb-4">Why Choose Novapex Infohub?</h4>
               <ul className="space-y-3">
                 <li className="flex items-center space-x-3">
@@ -152,7 +134,7 @@ const About = () => {
               alt="Team collaboration" 
               className="w-full h-96 object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-600/60 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-[#00C08B]/80 via-[#00C08B]/60 to-transparent"></div>
             <div className="absolute inset-0 flex items-center">
               <div className="max-w-2xl mx-auto px-8 text-white">
                 <h3 className="text-4xl font-bold mb-6">Collaboration at Its Best</h3>
@@ -175,10 +157,6 @@ const About = () => {
                 className="w-full h-80 object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
-              <div className="absolute bottom-6 left-6 text-white">
-                <h4 className="text-xl font-semibold mb-2">Our Modern Workspace</h4>
-                <p className="text-sm opacity-90">Where innovation meets collaboration</p>
-              </div>
             </div>
             <div>
               <h3 className="text-3xl font-bold text-gray-900 mb-6">Innovation-Driven Environment</h3>
@@ -188,42 +166,23 @@ const About = () => {
                 is optimized for productivity and breakthrough thinking.
               </p>
               <div className="grid grid-cols-2 gap-4">
-                <div className="bg-blue-50 p-4 rounded-lg">
+                <div className="bg-[#00C08B]/10 p-4 rounded-lg">
                   <h5 className="font-semibold text-gray-900 mb-2">Open Collaboration</h5>
                   <p className="text-sm text-gray-600">Flexible spaces that encourage teamwork</p>
                 </div>
-                <div className="bg-purple-50 p-4 rounded-lg">
+                <div className="bg-[#00C08B]/10 p-4 rounded-lg">
                   <h5 className="font-semibold text-gray-900 mb-2">Innovation Labs</h5>
                   <p className="text-sm text-gray-600">Dedicated areas for experimentation</p>
                 </div>
-                <div className="bg-green-50 p-4 rounded-lg">
+                <div className="bg-[#00C08B]/10 p-4 rounded-lg">
                   <h5 className="font-semibold text-gray-900 mb-2">Focus Zones</h5>
                   <p className="text-sm text-gray-600">Quiet spaces for deep work</p>
                 </div>
-                <div className="bg-indigo-50 p-4 rounded-lg">
+                <div className="bg-[#00C08B]/10 p-4 rounded-lg">
                   <h5 className="font-semibold text-gray-900 mb-2">Tech Hub</h5>
                   <p className="text-sm text-gray-600">Latest tools and technologies</p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Modern Office Building Section */}
-        <div className="mb-20">
-          <div className="relative overflow-hidden rounded-2xl shadow-lg">
-            <img 
-              src="https://images.pexels.com/photos/2467558/pexels-photo-2467558.jpeg?auto=compress&cs=tinysrgb&w=1200" 
-              alt="Modern office building exterior" 
-              className="w-full h-96 object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-gray-900/70 via-transparent to-transparent"></div>
-            <div className="absolute bottom-8 left-8 text-white">
-              <h3 className="text-3xl font-bold mb-4">Our Global Presence</h3>
-              <p className="text-lg max-w-2xl">
-                Strategically located in major tech hubs worldwide, our offices serve as innovation centers 
-                that connect local expertise with global opportunities.
-              </p>
             </div>
           </div>
         </div>
@@ -240,19 +199,19 @@ const About = () => {
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-[#00C08B] rounded-full"></div>
                   <span className="text-gray-700">Sustainable design principles</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-[#00C08B] rounded-full"></div>
                   <span className="text-gray-700">Energy-efficient systems</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-[#00C08B] rounded-full"></div>
                   <span className="text-gray-700">Smart building technology</span>
                 </div>
                 <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                  <div className="w-3 h-3 bg-[#00C08B] rounded-full"></div>
                   <span className="text-gray-700">Wellness-focused amenities</span>
                 </div>
               </div>
@@ -273,78 +232,146 @@ const About = () => {
         </div>
 
         {/* Leadership Team Section */}
-     <div className="mb-20 relative">
-      <div className="text-center mb-12">
-        <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Co-Founders</h3>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Meet the visionary leaders who drive our company's success and innovation
-        </p>
-      </div>
-      
-      {/* Slider Container */}
-      <div className="relative overflow-hidden">
-        {/* Navigation Arrows */}
-        <button 
-          onClick={prevSlide}
-          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
-          aria-label="Previous team member"
-        >
-          <ChevronLeft className="h-5 w-5 text-gray-700" />
-        </button>
-        
-        <button 
-          onClick={nextSlide}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-100 transition-colors"
-          aria-label="Next team member"
-        >
-          <ChevronRight className="h-5 w-5 text-gray-700" />
-        </button>
+        <div className="mb-20 relative">
+          <div className="text-center mb-12">
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Meet Our Co-Founders</h3>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Meet the visionary leaders who drive our company's success and innovation
+            </p>
+          </div>
+          
+          {/* Slider Container */}
+<div className="py-16 bg-white">
+  <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
 
-        {/* Slides */}
-        <div 
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {teamMembers.map((member, index) => (
-            <div 
-              key={index} 
-              className="w-full flex-shrink-0 px-4"
-            >
-              <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center group hover:shadow-xl transition-shadow duration-300">
-                <img 
-                  src={member.image} 
-                  alt={`${member.name} Portrait`} 
-                  className={`w-20 h-20 rounded-full object-cover border-4 border-${member.color}-100 mx-auto mb-4`}
-                />
-                <h4 className="text-xl font-bold text-gray-900 mb-1">{member.name}</h4>
-                <p className={`text-${member.color}-600 font-semibold mb-3`}>{member.role}</p>
-                <p className="text-gray-600 text-sm">
-                  {member.description}
-                </p>
-              </div>
+
+    {/* Team Members */}
+   <div className="py-20 bg-gray-50">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {/* Header */}
+
+
+    {/* Team Members in Animated Zig Zag Pattern */}
+    <div className="space-y-32">
+      {/* Mr. Amol Harne - Left Aligned */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center animate-slide-in-left" style={{animationDelay: '0.4s'}}>
+        {/* Image Column */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="relative group">
+            <div className="w-64 h-64 bg-gradient-to-r from-[#00C08B] to-[#008C6B] rounded-2xl flex items-center justify-center text-white text-7xl font-bold shadow-2xl transform rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-700">
+              AH
             </div>
-          ))}
+            {/* Animated Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#00C08B]/20 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000"></div>
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#00C08B]/10 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000 delay-200"></div>
+            {/* Pulse Animation */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-[#00C08B] opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 animate-pulse"></div>
+          </div>
+        </div>
+        
+        {/* Content Column */}
+        <div className="lg:col-span-7 lg:pl-12">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#00C08B] hover:shadow-xl hover:translate-x-2 transition-all duration-500 group">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#00C08B] transition-colors duration-500">
+              Mr. Amol Harne
+            </h2>
+            <p className="text-[#00C08B] font-semibold text-lg mb-6 border-b border-gray-200 pb-4 group-hover:border-[#00C08B] transition-colors duration-500">
+              HR Professional & Entrepreneur
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg group-hover:text-gray-900 transition-colors duration-500">
+              As an experienced HR professional and visionary entrepreneur, Amol brings a unique perspective 
+              to Novapex Infohub. His strategic thinking and people-first approach lay the foundation for 
+              a strong, client-centric organization. Amol oversees operations and ensures the delivery of 
+              exceptional services tailored to client needs.
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Navigation Dots */}
-      <div className="flex justify-center mt-6 space-x-2">
-        {teamMembers.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentSlide(index)}
-            className={`w-3 h-3 rounded-full ${currentSlide === index ? 'bg-blue-600' : 'bg-gray-300'}`}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
+      {/* Mrs. Mrunal Ghenge - Right Aligned */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center animate-slide-in-right" style={{animationDelay: '0.6s'}}>
+        {/* Content Column */}
+        <div className="lg:col-span-7 lg:order-1">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border-r-4 border-[#00C08B] hover:shadow-xl hover:-translate-x-2 transition-all duration-500 group">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#00C08B] transition-colors duration-500">
+              Mrs. Mrunal Ghenge
+            </h2>
+            <p className="text-[#00C08B] font-semibold text-lg mb-6 border-b border-gray-200 pb-4 group-hover:border-[#00C08B] transition-colors duration-500">
+              Creative Director & UX Specialist
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg group-hover:text-gray-900 transition-colors duration-500">
+              Mrunal is a creative thinker and problem solver. Her focus on design, quality, and user 
+              experience brings life to Novapex Infohub's projects. She specializes in translating 
+              client visions into visually appealing, functional web applications that exceed expectations.
+            </p>
+          </div>
+        </div>
+        
+        {/* Image Column */}
+        <div className="lg:col-span-5 lg:order-2 flex justify-center">
+          <div className="relative group">
+            <div className="w-64 h-64 bg-gradient-to-r from-[#008C6B] to-[#00C08B] rounded-2xl flex items-center justify-center text-white text-7xl font-bold shadow-2xl transform -rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-700">
+              MG
+            </div>
+            {/* Animated Decorative Elements */}
+            <div className="absolute -top-4 -right-4 w-20 h-20 bg-[#00C08B]/20 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000"></div>
+            <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-[#00C08B]/10 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000 delay-200"></div>
+            {/* Pulse Animation */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-[#00C08B] opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+
+      {/* Mrs. Daila Aswar - Left Aligned */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center animate-slide-in-left" style={{animationDelay: '0.8s'}}>
+        {/* Image Column */}
+        <div className="lg:col-span-5 flex justify-center">
+          <div className="relative group">
+            <div className="w-64 h-64 bg-gradient-to-r from-[#00C08B] to-[#008C6B] rounded-2xl flex items-center justify-center text-white text-7xl font-bold shadow-2xl transform rotate-3 group-hover:rotate-0 group-hover:scale-105 transition-all duration-700">
+              DA
+            </div>
+            {/* Animated Decorative Elements */}
+            <div className="absolute -top-4 -left-4 w-20 h-20 bg-[#00C08B]/20 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000"></div>
+            <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-[#00C08B]/10 rounded-full group-hover:scale-125 group-hover:opacity-70 transition-all duration-1000 delay-200"></div>
+            {/* Pulse Animation */}
+            <div className="absolute inset-0 rounded-2xl border-2 border-[#00C08B] opacity-0 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500 animate-pulse"></div>
+          </div>
+        </div>
+        
+        {/* Content Column */}
+        <div className="lg:col-span-7 lg:pl-12">
+          <div className="bg-white rounded-2xl p-8 shadow-lg border-l-4 border-[#00C08B] hover:shadow-xl hover:translate-x-2 transition-all duration-500 group">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4 group-hover:text-[#00C08B] transition-colors duration-500">
+              Mrs. Daila Aswar
+            </h2>
+            <p className="text-[#00C08B] font-semibold text-lg mb-6 border-b border-gray-200 pb-4 group-hover:border-[#00C08B] transition-colors duration-500">
+              Technical Lead & Developer
+            </p>
+            <p className="text-gray-700 leading-relaxed text-lg group-hover:text-gray-900 transition-colors duration-500">
+              Daila brings technical expertise and innovation to Novapex Infohub. With a strong background 
+              in development and technology solutions, she ensures that projects are built with cutting-edge 
+              technologies and robust architecture. Her attention to detail and problem-solving skills make 
+              her an invaluable part of our team.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+  </div>
+</div>
+
+          {/* Navigation Dots */}
+      
+        </div>
 
         {/* Values */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div className="text-center group">
-            <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors duration-300">
-              <Target className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+            <div className="bg-[#00C08B]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#00C08B] transition-colors duration-300">
+              <Target className="h-8 w-8 text-[#00C08B] group-hover:text-white transition-colors duration-300" />
             </div>
             <h4 className="text-xl font-bold text-gray-900 mb-2">Mission</h4>
             <p className="text-gray-600">
@@ -352,8 +379,8 @@ const About = () => {
             </p>
           </div>
           <div className="text-center group">
-            <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-600 transition-colors duration-300">
-              <Eye className="h-8 w-8 text-purple-600 group-hover:text-white transition-colors duration-300" />
+            <div className="bg-[#00C08B]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#00C08B] transition-colors duration-300">
+              <Eye className="h-8 w-8 text-[#00C08B] group-hover:text-white transition-colors duration-300" />
             </div>
             <h4 className="text-xl font-bold text-gray-900 mb-2">Vision</h4>
             <p className="text-gray-600">
@@ -361,8 +388,8 @@ const About = () => {
             </p>
           </div>
           <div className="text-center group">
-            <div className="bg-indigo-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-indigo-600 transition-colors duration-300">
-              <Award className="h-8 w-8 text-indigo-600 group-hover:text-white transition-colors duration-300" />
+            <div className="bg-[#00C08B]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#00C08B] transition-colors duration-300">
+              <Award className="h-8 w-8 text-[#00C08B] group-hover:text-white transition-colors duration-300" />
             </div>
             <h4 className="text-xl font-bold text-gray-900 mb-2">Excellence</h4>
             <p className="text-gray-600">
@@ -370,8 +397,8 @@ const About = () => {
             </p>
           </div>
           <div className="text-center group">
-            <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-600 transition-colors duration-300">
-              <Globe className="h-8 w-8 text-green-600 group-hover:text-white transition-colors duration-300" />
+            <div className="bg-[#00C08B]/10 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-[#00C08B] transition-colors duration-300">
+              <Globe className="h-8 w-8 text-[#00C08B] group-hover:text-white transition-colors duration-300" />
             </div>
             <h4 className="text-xl font-bold text-gray-900 mb-2">Global Reach</h4>
             <p className="text-gray-600">

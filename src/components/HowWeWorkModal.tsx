@@ -96,7 +96,7 @@ const HowWeWorkModal: React.FC<HowWeWorkModalProps> = ({ isOpen, onClose }) => {
           {/* Overview Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-xl text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">500+</div>
+              <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
               <div className="text-gray-700">Projects Completed</div>
             </div>
             <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-6 rounded-xl text-center">
@@ -156,10 +156,10 @@ const HowWeWorkModal: React.FC<HowWeWorkModalProps> = ({ isOpen, onClose }) => {
             <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Our Expert Team</h3>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
-                { role: "Project Managers", count: "15+", description: "Certified PMP professionals" },
-                { role: "Developers", count: "50+", description: "Full-stack experts" },
-                { role: "Designers", count: "20+", description: "UI/UX specialists" },
-                { role: "QA Engineers", count: "25+", description: "Quality assurance experts" }
+                { role: "Project Managers", count: "5+", description: "Certified PMP professionals" },
+                { role: "Developers", count: "10+", description: "Full-stack experts" },
+                { role: "Designers", count: "10+", description: "UI/UX specialists" },
+                { role: "QA Engineers", count: "5+", description: "Quality assurance experts" }
               ].map((team, index) => (
                 <div key={index} className="text-center">
                   <div className="text-2xl font-bold text-blue-600 mb-2">{team.count}</div>
@@ -170,15 +170,8 @@ const HowWeWorkModal: React.FC<HowWeWorkModalProps> = ({ isOpen, onClose }) => {
             </div>
           </div>
 
-          {/* CTA Section */}
-          <div className="mt-8 text-center">
-            <button
-              onClick={onClose}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200"
-            >
-              Start Your Project Today
-            </button>
-          </div>
+
+        
         </div>
       </div>
     </div>

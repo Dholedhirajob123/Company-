@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import  { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { NavLink, useLocation } from 'react-router-dom';
 
@@ -38,7 +38,7 @@ const Header = () => {
             ? 'bg-white shadow-sm' 
             : 'bg-transparent'
       }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-4">
           <div className="flex justify-between items-center py-4">
             {/* Logo */}
             <NavLink 
@@ -54,17 +54,17 @@ const Header = () => {
             </NavLink>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex space-x-8">
+            <nav className="hidden md:flex space-x-6">
               {navItems.map((item) => (
                 <NavLink
                   key={item.path}
                   to={item.path}
-                  className={({ isActive }) => `font-medium transition-colors duration-200 ${
+                  className={({ isActive }) => `text-sm font-medium transition-colors duration-200 ${
                     isActive 
-                      ? 'text-blue-600 font-semibold' 
+                      ? 'text-[#00C08B] font-semibold' 
                       : isScrolled || isHomePage
-                        ? 'text-gray-900 hover:text-blue-600' 
-                        : 'text-black hover:text-blue-300'
+                        ? 'text-gray-900 hover:text-[#00C08B]' 
+                        : 'text-black hover:text-[#00C08B]'
                   }`}
                 >
                   {item.name}
@@ -79,9 +79,9 @@ const Header = () => {
               aria-label="Toggle menu"
             >
               {isMenuOpen ? (
-                <X className={`h-6 w-6 ${isScrolled || isHomePage ? 'text-gray-900' : 'text-white'}`} />
+                <X className={`h-4 w-6 ${isScrolled || isHomePage ? 'text-gray-900' : 'text-white'}`} />
               ) : (
-                <Menu className={`h-6 w-6 ${isScrolled || isHomePage ? 'text-gray-900' : 'text-white'}`} />
+                <Menu className={`h-4 w-6 ${isScrolled || isHomePage ? 'text-gray-900' : 'text-white'}`} />
               )}
             </button>
           </div>
@@ -96,8 +96,8 @@ const Header = () => {
                   onClick={closeMenu}
                   className={({ isActive }) => `block w-full text-left px-4 py-3 transition-colors duration-200 ${
                     isActive
-                      ? 'bg-blue-50 text-blue-600 font-medium'
-                      : 'text-gray-900 hover:bg-gray-50'
+                      ? 'bg-[#00C08B]/10 text-[#00C08B] font-medium'
+                      : 'text-gray-900 hover:bg-gray-50 hover:text-[#00C08B]'
                   }`}
                 >
                   {item.name}
@@ -111,10 +111,10 @@ const Header = () => {
       {/* WhatsApp Button - Fixed position outside header */}
       <div className="fixed right-6 bottom-6 z-40">
         <a 
-          href="https://wa.me/YOUR_PHONE_NUMBER" 
+          href="https://wa.me/919420409902" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center justify-center bg-green-500 text-white rounded-full w-16 h-16 shadow-xl hover:bg-green-600 transition-all duration-300 hover:shadow-2xl hover:scale-110"
+          className="flex items-center justify-center bg-[#00C08B] text-white rounded-full w-16 h-16 shadow-xl hover:bg-[#009970] transition-all duration-300 hover:shadow-2xl hover:scale-110"
           aria-label="Chat on WhatsApp"
         >
           <svg 

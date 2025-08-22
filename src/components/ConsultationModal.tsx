@@ -24,26 +24,13 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
 
   const hrTeam = [
     {
-      name: "Sarah Johnson",
+      name: "Raghunath Dange",
       role: "HR Director",
-      email: "sarah.johnson@company.com",
-      phone: "+1 (555) 123-4567",
-      image: "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=400"
+      email: "Raghunath@novapex.com",
+    
+      image: "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
     },
-    {
-      name: "Michael Chen",
-      role: "Technical Recruiter",
-      email: "michael.chen@company.com",
-      phone: "+1 (555) 234-5678",
-      image: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=400"
-    },
-    {
-      name: "Emily Rodriguez",
-      role: "Project Coordinator",
-      email: "emily.rodriguez@company.com",
-      phone: "+1 (555) 345-6789",
-      image: "https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=400"
-    }
+  
   ];
 
   const consultationProcess = [
@@ -185,13 +172,7 @@ const ConsultationModal: React.FC<ConsultationModalProps> = ({ isOpen, onClose }
                         <Mail className="h-4 w-4" />
                         <span>{member.email}</span>
                       </a>
-                      <a
-                        href={`tel:${member.phone}`}
-                        className="flex items-center justify-center space-x-2 text-sm text-gray-600 hover:text-blue-600 transition-colors"
-                      >
-                        <Phone className="h-4 w-4" />
-                        <span>{member.phone}</span>
-                      </a>
+                    
                     </div>
                   </div>
                 </div>
