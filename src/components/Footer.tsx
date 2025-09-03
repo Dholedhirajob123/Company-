@@ -9,14 +9,18 @@ import {
   Linkedin, 
   ArrowUp
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
+// This would be in your main App component or separate pages
+// For demonstration, I'll create a simple layout with all sections
 
 const Footer = () => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
@@ -32,16 +36,16 @@ const Footer = () => {
   ];
 
   const company = [
-    { name: 'About Us', href: '#about' },
-    { name: 'Our Services', href: '#services' },
-    { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Careers', href: '#careers' },
-    { name: 'Contact', href: '#contact' }
+    { name: 'About Us', id: 'about' },
+    { name: 'Our Services', id: 'services' },
+    { name: 'Portfolio', id: 'portfolio' },
+    { name: 'Careers', id: 'careers' },
+    { name: 'Contact', id: 'contact' }
   ];
 
   const resources = [
-    'Blog',
-    'Support Center'
+    { name: 'Blog', path: '/blog' },
+    { name: 'Support Center', path: '/support' }
   ];
 
   return (
@@ -91,7 +95,7 @@ const Footer = () => {
               {services.map((service, index) => (
                 <li key={index}>
                   <button 
-                    onClick={() => scrollToSection('#services')}
+                    onClick={() => scrollToSection('services')}
                     className="text-gray-400 hover:text-[#00C08B] transition-colors duration-200 text-left"
                   >
                     {service}
@@ -108,7 +112,7 @@ const Footer = () => {
               {company.map((item, index) => (
                 <li key={index}>
                   <button 
-                    onClick={() => scrollToSection(item.href)}
+                    onClick={() => scrollToSection(item.id)}
                     className="text-gray-400 hover:text-[#00C08B] transition-colors duration-200 text-left"
                   >
                     {item.name}
@@ -124,9 +128,12 @@ const Footer = () => {
             <ul className="space-y-3">
               {resources.map((resource, index) => (
                 <li key={index}>
-                  <a href="#" className="text-gray-400 hover:text-[#00C08B] transition-colors duration-200">
-                    {resource}
-                  </a>
+                  <Link 
+                    to={resource.path}
+                    className="text-gray-400 hover:text-[#00C08B] transition-colors duration-200"
+                  >
+                    {resource.name}
+                  </Link>
                 </li>
               ))}
             </ul>

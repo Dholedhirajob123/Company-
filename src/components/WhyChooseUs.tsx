@@ -1,1 +1,0 @@
-used to show your company details, heading and list of key feature about organization journey alongside grid of images.
