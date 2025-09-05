@@ -9,6 +9,94 @@ const NovapexPage = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
   const [isClicking, setIsClicking] = useState(false);
   const [hoverElement, setHoverElement] = useState(null);
+  
+  // Slider states
+  const [testimonialIndex, setTestimonialIndex] = useState(0);
+  const [featureIndex, setFeatureIndex] = useState(0);
+  const [statsIndex, setStatsIndex] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Slider hero data
+  const heroSlides = [
+    {
+      id: 1,
+      title: "Web Development Excellence",
+      subtitle: "Creating responsive, modern websites that drive results",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80",
+      cta: "View Portfolio"
+    },
+    {
+      id: 2,
+      title: "Mobile App Innovation",
+      subtitle: "Native and cross-platform applications for seamless user experiences",
+      image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      cta: "Explore Apps"
+    },
+    {
+      id: 3,
+      title: "UI/UX Design Mastery",
+      subtitle: "Intuitive interfaces that engage and convert your audience",
+      image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80",
+      cta: "See Designs"
+    }
+  ];
+
+  // Testimonial data
+  const testimonials = [
+    {
+      id: 1,
+      name: "Sarah Johnson",
+      role: "CTO, TechCorp Inc.",
+      content: "Novapex transformed our business operations. Their solutions helped us increase productivity by 40% in just three months.",
+      avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1287&q=80"
+    },
+    {
+      id: 2,
+      name: "Michael Chen",
+      role: "Operations Director, Global Solutions",
+      content: "The implementation was seamless and the support team was exceptional. We've seen a 25% reduction in operational costs.",
+      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+    },
+    {
+      id: 3,
+      name: "Elena Rodriguez",
+      role: "CEO, Innovate Labs",
+      content: "Novapex's mobile app has been a game-changer for our remote teams. The intuitive interface and reliability are unmatched.",
+      avatar: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1361&q=80"
+    }
+  ];
+
+  // Features data
+  const features = [
+    {
+      title: "Real-time Analytics",
+      description: "Access live data and insights to make informed decisions instantly.",
+      icon: "📊"
+    },
+    {
+      title: "Seamless Integration",
+      description: "Connect with your existing tools and workflows without disruption.",
+      icon: "🔌"
+    },
+    {
+      title: "Custom Workflows",
+      description: "Tailor processes to match your unique business requirements.",
+      icon: "🔄"
+    },
+    {
+      title: "Advanced Security",
+      description: "Enterprise-grade protection for your sensitive data and operations.",
+      icon: "🔒"
+    }
+  ];
+
+  // Stats data
+  const stats = [
+    { value: "97%", label: "Customer Satisfaction" },
+    { value: "3.5x", label: "Average ROI" },
+    { value: "40%", label: "Cost Reduction" },
+    { value: "24/7", label: "Support Availability" }
+  ];
 
   useEffect(() => {
     // Track mouse movement
@@ -24,6 +112,21 @@ const NovapexPage = () => {
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
 
+    // Auto-rotate testimonials
+    const testimonialInterval = setInterval(() => {
+      setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+    }, 5000);
+
+    // Auto-rotate features
+    const featureInterval = setInterval(() => {
+      setFeatureIndex((prev) => (prev + 1) % features.length);
+    }, 4000);
+
+    // Auto-rotate hero slides
+    const heroInterval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 6000);
+
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mousedown', handleMouseDown);
     window.addEventListener('mouseup', handleMouseUp);
@@ -32,8 +135,35 @@ const NovapexPage = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('mousedown', handleMouseDown);
       window.removeEventListener('mouseup', handleMouseUp);
+      clearInterval(testimonialInterval);
+      clearInterval(featureInterval);
+      clearInterval(heroInterval);
     };
-  }, []);
+  }, [testimonials.length, features.length, heroSlides.length]);
+
+  const nextTestimonial = () => {
+    setTestimonialIndex((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setTestimonialIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
+
+  const nextFeature = () => {
+    setFeatureIndex((prev) => (prev + 1) % features.length);
+  };
+
+  const prevFeature = () => {
+    setFeatureIndex((prev) => (prev - 1 + features.length) % features.length);
+  };
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 font-sans cursor-none">
@@ -50,8 +180,97 @@ const NovapexPage = () => {
         <div className="w-2 h-2 bg-blue-600 rounded-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
       </div>
 
+      {/* Slider Hero Section */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  {/* Background Slides */}
+  <div className="absolute inset-0">
+    {heroSlides.map((slide, index) => (
+      <div
+        key={slide.id}
+        className={`absolute inset-0 transition-opacity duration-1000 ${
+          index === currentSlide ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <img
+          src={slide.image}
+          alt={slide.title}
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+      </div>
+    ))}
+  </div>
+
+  {/* Slide Content */}
+  <div className="relative z-10 text-center space-y-8 px-4 max-w-4xl mx-auto">
+    <div className="space-y-6">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+        <span className="block">{heroSlides[currentSlide].title}</span>
+      </h1>
+      <p className="text-xl lg:text-2xl text-gray-200 max-w-2xl mx-auto">
+        {heroSlides[currentSlide].subtitle}
+      </p>
+    </div>
+
+    {/* Slider Indicators */}
+    <div className="flex justify-center space-x-3">
+      {heroSlides.map((_, index) => (
+        <button
+          key={index}
+          onClick={() => setCurrentSlide(index)}
+          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            index === currentSlide ? "bg-white scale-125" : "bg-white/50"
+          }`}
+        />
+      ))}
+    </div>
+
+    {/* Navigation Arrows */}
+    <button
+      onClick={prevSlide}
+      className="absolute left-8 md:left-12 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+    >
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M15 19l-7-7 7-7"
+        />
+      </svg>
+    </button>
+    <button
+      onClick={nextSlide}
+      className="absolute right-8 md:right-12 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all duration-300 backdrop-blur-sm"
+    >
+      <svg
+        className="w-6 h-6 text-white"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="M9 5l7 7-7 7"
+        />
+      </svg>
+    </button>
+  </div>
+</section>
+
+
+
+
+
       {/* Conference Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${conferenceImage})` }}
@@ -70,7 +289,7 @@ const NovapexPage = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Novapex Hero Section */}
       <section className="py-20 px-4">
@@ -79,13 +298,6 @@ const NovapexPage = () => {
             {/* Text Content */}
             <div className="space-y-8">
               <div className="space-y-4">
-                <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  #1 Business Solutions
-                </div>
-                
                 <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
                   Elevate Your Business with 
                   <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
@@ -118,31 +330,6 @@ const NovapexPage = () => {
                   <span className="text-gray-800">Proven results</span>
                 </div>
               </div>
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center">
-                  Get Started
-                  <svg className="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
-                </button>
-                <button className="px-8 py-4 bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 font-medium rounded-lg transition-all duration-300">
-                  View Demo
-                </button>
-              </div>
-
-              <div className="flex items-center space-x-6 pt-4">
-                <div className="flex items-center space-x-1">
-                  <div className="flex">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="h-5 w-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <span className="text-sm text-gray-600 ml-2">4.9/5 from 2k+ reviews</span>
-                </div>
-              </div>
             </div>
 
             {/* Image Content */}
@@ -167,142 +354,179 @@ const NovapexPage = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Floating Stat */}
-                <div className="absolute -top-4 -right-4 bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-                  <div className="flex items-center">
-                    <div className="w-2 h-2 bg-green-300 rounded-full mr-2 animate-pulse"></div>
-                    97% Success Rate
-                  </div>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
+{/* // Add this section after the Event Development & Design Section */}
 
-      {/* Mobile App Section */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-indigo-50">
-        <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-6">
-                <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                  App Store Editor's Choice
-                </div>
-                
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900">
-                  Your Mobile
-                  <span className="block bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                    Experience
-                  </span>
-                  Perfected
-                </h1>
-                
-                <p className="text-lg text-gray-600">
-                  Transform how you work on the go. Our mobile app brings all the power of our platform 
-                  to your fingertips with an intuitive, lightning-fast interface.
-                </p>
+{/* About Novapex Section */}
+<section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100 px-4">
+  <div className="container mx-auto max-w-6xl">
+    <div className="text-center mb-16">
+      <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">About Novapex</h2>
+      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+        Pioneering innovation and excellence in digital solutions since 2010
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* Company Story */}
+      <div className="space-y-6">
+        <div className="space-y-4">
+          <h3 className="text-2xl font-bold text-gray-900">Our Story</h3>
+          <p className="text-gray-600">
+            Novapex began as a small team of passionate developers and designers 
+            with a vision to transform how businesses leverage technology. Today, we're a leading 
+            digital solutions provider serving clients across 15+ countries.
+          </p>
+          <p className="text-gray-600">
+            Our journey has been marked by continuous innovation, client success stories, and 
+            a relentless pursuit of excellence in everything we do.
+          </p>
+        </div>
+
+
+{/* 
+        <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300">
+          Read Our Full Story
+          <svg className="inline ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button> */}
+      </div>
+
+      {/* Team Image & Values */}
+      <div className="relative">
+        <div className="absolute -inset-4 bg-gradient-to-r from-blue-400 to-indigo-500 opacity-20 blur-2xl rounded-3xl"></div>
+        <div className="relative bg-white/70 backdrop-blur-sm border border-gray-200/50 rounded-3xl p-6 shadow-xl">
+          <img 
+            src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80" 
+            alt="Novapex Team" 
+            className="w-full h-auto rounded-2xl shadow-lg"
+          />
+          
+          {/* Values Floating Cards */}
+          <div className="absolute -bottom-4 -left-4 bg-white border border-gray-200 rounded-xl p-4 shadow-lg max-w-xs">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                <span className="text-xl">🌟</span>
               </div>
-
-              <div className="space-y-6">
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center">
-                    <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.05 12.04C17.32 15.91 14.75 17.5 13.03 17.5C11.63 17.5 10.58 16.81 9.37 16.81C8.14 16.81 6.95 17.5 5.75 17.5C3.73 17.5 1.5 15.13 1.5 10.6C1.5 6.63 4.13 4.33 6.96 4.33C8.28 4.33 9.41 5.03 10.23 5.03C10.99 5.03 12.17 4.33 13.64 4.33C14.92 4.33 16.26 4.85 17.22 5.84C15.49 6.93 14.78 9.22 15.05 12.04H17.05ZM12.63 3.5C12.28 2.3 13.31 1 14.47 1C14.67 2.17 13.77 3.33 12.63 3.5Z"/>
-                    </svg>
-                    Download for iOS
-                  </button>
-                  <button className="px-8 py-4 bg-white hover:bg-gray-50 text-blue-600 border border-blue-600 font-medium rounded-lg transition-all duration-300 flex items-center justify-center">
-                    <svg className="mr-2 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M3 20.5V3.5C3 2.91 3.34 2.5 3.5 2.5H20.5C20.66 2.5 21 2.91 21 3.5V20.5C21 21.09 20.66 21.5 20.5 21.5H3.5C3.34 21.5 3 21.09 3 20.5ZM12 18C15.31 18 18 15.31 18 12C18 8.69 15.31 6 12 6C8.69 6 6 8.69 6 12C6 15.31 8.69 18 12 18Z"/>
-                    </svg>
-                    Get on Android
-                  </button>
-                </div>
-
-                <div className="flex items-center space-x-8">
-                  <div className="flex items-center space-x-2">
-                    <svg className="h-5 w-5 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                    </svg>
-                    <span className="text-sm text-gray-600">1M+ Downloads</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <svg key={i} className="h-4 w-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                      ))}
-                    </div>
-                    <span className="text-sm text-gray-600 ml-1">4.8 Rating</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-6 pt-8">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">50ms</div>
-                  <div className="text-xs text-gray-600">Load Time</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">99.9%</div>
-                  <div className="text-xs text-gray-600">Reliability</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-gray-900">24/7</div>
-                  <div className="text-xs text-gray-600">Sync</div>
-                </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">Innovation</h4>
+                <p className="text-sm text-gray-600">Pushing boundaries</p>
               </div>
             </div>
+          </div>
 
-            <div className="relative flex justify-center">
-              <div className="relative">
-                {/* Phone Frame */}
-                <div className="relative w-80 h-[640px] bg-white rounded-[3rem] p-2 shadow-xl border border-gray-200/50">
-                  <div className="w-full h-full bg-gray-100 rounded-[2.5rem] overflow-hidden">
-                    {/* Status Bar */}
-                    <div className="flex justify-between items-center px-6 py-3 bg-white">
-                      <div className="text-sm font-medium text-gray-900">9:41</div>
-                      <div className="flex space-x-1">
-                        <div className="w-4 h-2 bg-gray-900 rounded-sm"></div>
-                        <div className="w-6 h-2 bg-gray-900 rounded-sm"></div>
-                        <div className="w-6 h-2 bg-blue-600 rounded-sm"></div>
+          <div className="absolute -top-4 -right-4 bg-white border border-gray-200 rounded-xl p-4 shadow-lg max-w-xs">
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+                <span className="text-xl">🤝</span>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900">Collaboration</h4>
+                <p className="text-sm text-gray-600">Partnership approach</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Mission & Vision */}
+    <div className="grid md:grid-cols-2 gap-12 mt-20">
+      <div className="bg-white rounded-2xl p-8 shadow-lg">
+        <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-4">
+          🎯
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Our Mission</h3>
+        <p className="text-gray-600">
+          To empower businesses with cutting-edge digital solutions that drive growth, 
+          enhance efficiency, and create meaningful impact in today's competitive landscape.
+        </p>
+      </div>
+
+      <div className="bg-white rounded-2xl p-8 shadow-lg">
+        <div className="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl mb-4">
+          🔭
+        </div>
+        <h3 className="text-xl font-bold text-gray-900 mb-4">Our Vision</h3>
+        <p className="text-gray-600">
+          To be the world's most trusted partner for digital transformation, 
+          setting new standards in innovation, quality, and client satisfaction.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+      {/* Testimonials Slider Section */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-4">What Our Clients Say</h2>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Hear from businesses that have transformed their operations with Novapex solutions.
+          </p>
+          
+          <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-8 md:p-12 shadow-lg">
+            <div className="relative overflow-hidden">
+              <div 
+                className="flex transition-transform duration-500 ease-in-out"
+                style={{ transform: `translateX(-${testimonialIndex * 100}%)` }}
+              >
+                {testimonials.map((testimonial) => (
+                  <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                    <div className="text-center">
+                      <div className="w-24 h-24 mx-auto mb-6 rounded-full overflow-hidden border-4 border-white shadow-lg">
+                        <img 
+                          src={testimonial.avatar} 
+                          alt={testimonial.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <p className="text-xl text-gray-800 italic mb-6 max-w-2xl mx-auto">
+                        "{testimonial.content}"
+                      </p>
+                      <div>
+                        <h4 className="text-lg font-semibold text-gray-900">{testimonial.name}</h4>
+                        <p className="text-gray-600">{testimonial.role}</p>
                       </div>
                     </div>
-                    
-                    {/* App Content */}
-                    <div className="h-full">
-                      <img 
-                        src={appScreenshot}
-                        alt="Mobile App Interface"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
                   </div>
-
-                  {/* Home Indicator */}
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gray-900/20 rounded-full"></div>
-                </div>
-
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-8 bg-blue-600 text-white px-3 py-2 rounded-lg text-sm font-medium shadow-lg">
-                  New Update!
-                </div>
-                <div className="absolute -bottom-8 -left-8 bg-white border border-gray-200 rounded-xl p-4 shadow-lg">
-                  <div className="flex items-center space-x-3">
-                    <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full"></div>
-                    <div>
-                      <div className="font-medium text-sm text-gray-900">Sarah Chen</div>
-                      <div className="text-xs text-gray-600">Just joined your team</div>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
+            </div>
+            
+            {/* Navigation buttons */}
+            <button 
+              onClick={prevTestimonial}
+              className="absolute left-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            <button 
+              onClick={nextTestimonial}
+              className="absolute right-2 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center hover:bg-gray-50 transition-colors"
+            >
+              <svg className="w-5 h-5 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+            
+            {/* Indicators */}
+            <div className="flex justify-center mt-8 space-x-2">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setTestimonialIndex(index)}
+                  className={`w-3 h-3 rounded-full ${index === testimonialIndex ? 'bg-blue-600' : 'bg-gray-300'}`}
+                />
+              ))}
             </div>
           </div>
         </div>
@@ -338,87 +562,133 @@ const NovapexPage = () => {
         </div>
       </section>
 
-      {/* Maintenance Section */}
-      <section className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-900 to-purple-800 px-4 py-20">
-        <div className="max-w-4xl mx-auto text-center space-y-8 text-white">
-          <div className="inline-flex items-center px-4 py-2 bg-white/20 text-white rounded-full text-sm font-medium backdrop-blur-sm">
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Scheduled Maintenance
-          </div>
+      {/* Event Development & Design Section */}
+      <section className="py-20 bg-white px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+            Event Development & Design Excellence
+          </h2>
+          <p className="text-lg text-gray-600 text-center mb-12 max-w-2xl mx-auto">
+            Creating immersive digital experiences that bring your event to life across all platforms
+          </p>
 
-          <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              We're Making Things
-              <span className="block bg-gradient-to-r from-blue-300 to-purple-300 bg-clip-text text-transparent">
-                Even Better
-              </span>
-            </h1>
-            
-            <p className="text-lg lg:text-xl text-gray-200 max-w-2xl mx-auto">
-              Our platform is temporarily unavailable while we implement exciting new features 
-              and performance improvements. We'll be back shortly!
-            </p>
-          </div>
+          <div className="relative bg-gradient-to-br from-blue-50 to-indigo-50 rounded-3xl p-6 md:p-8 shadow-lg">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Content */}
+              <div className="space-y-6">
+                <div className="space-y-4">
+                  <h3 className="text-2xl font-bold text-gray-900">Comprehensive Event Solutions</h3>
+                  <p className="text-gray-600">
+                    From initial concept to final execution, we craft seamless digital experiences that 
+                    engage attendees and amplify your event's impact across all touchpoints.
+                  </p>
+                </div>
 
-          <div className="relative max-w-lg mx-auto">
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-30 blur-2xl rounded-full"></div>
-            <img 
-              src={maintenanceIllustration}
-              alt="Maintenance Illustration"
-              className="relative w-full h-auto rounded-2xl shadow-xl"
-            />
-          </div>
+                <div className="space-y-4">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Responsive Web Design</h4>
+                      <p className="text-gray-600 text-sm">Beautiful, functional websites that work perfectly on any device</p>
+                    </div>
+                  </div>
 
-          <div className="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold">What's Coming Next?</h3>
-              <div className="grid md:grid-cols-2 gap-4 text-left">
-                <div className="space-y-2">
-                  <div className="font-medium">⚡ Enhanced Performance</div>
-                  <div className="text-sm text-gray-200">3x faster load times</div>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Mobile Applications</h4>
+                      <p className="text-gray-600 text-sm">Native and cross-platform apps for seamless event engagement</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Registration Systems</h4>
+                      <p className="text-gray-600 text-sm">Streamlined ticketing and attendee management solutions</p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start space-x-3">
+                    <div className="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900">Live Streaming</h4>
+                      <p className="text-gray-600 text-sm">High-quality broadcast capabilities for virtual attendees</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-medium">🛡️ Advanced Security</div>
-                  <div className="text-sm text-gray-200">Enhanced protection</div>
+
+                {/* <button className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-all duration-300">
+                  View Our Portfolio
+                  <svg className="inline ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </button> */}
+              </div>
+
+              {/* Image Slider */}
+              <div className="relative">
+                <div className="rounded-2xl overflow-hidden shadow-xl">
+                  <div className="relative h-80 md:h-96">
+                    <img 
+                      src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                      alt="Event website design"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end">
+                      <div className="p-6 text-white">
+                        <h4 className="font-bold text-lg">Conference 2023 Website</h4>
+                        <p className="text-sm">Fully responsive design with integrated registration</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-medium">🎨 New Interface</div>
-                  <div className="text-sm text-gray-200">Refreshed design</div>
+
+                {/* Slider Controls */}
+                <div className="flex justify-center mt-4 space-x-2">
+                  <button className="w-3 h-3 rounded-full bg-blue-600"></button>
+                  <button className="w-3 h-3 rounded-full bg-gray-300"></button>
+                  <button className="w-3 h-3 rounded-full bg-gray-300"></button>
+                  <button className="w-3 h-3 rounded-full bg-gray-300"></button>
                 </div>
-                <div className="space-y-2">
-                  <div className="font-medium">🤖 AI Features</div>
-                  <div className="text-sm text-gray-200">Smart automation</div>
+
+                {/* Floating Stats */}
+                <div className="absolute -bottom-4 -right-4 bg-white rounded-xl p-4 shadow-lg">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-blue-600">250+</div>
+                    <div className="text-sm text-gray-600">Events Developed</div>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-white hover:bg-gray-100 text-indigo-900 font-medium rounded-lg transition-all duration-300 flex items-center justify-center">
-                <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                Get Notified When Live
-              </button>
-              <button className="px-8 py-4 bg-transparent hover:bg-white/10 text-white border border-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center">
-                <svg className="mr-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg>
-                Check Status Page
-              </button>
-            </div>
-
-            <div className="text-center space-y-2">
-              <div className="text-sm text-gray-200">
-                Estimated completion: <span className="font-medium text-white">2:00 AM UTC</span>
+            {/* Client Logos */}
+            {/* <div className="mt-12 pt-8 border-t border-gray-200">
+              <h4 className="text-center text-gray-600 mb-6">Trusted by leading event organizers worldwide</h4>
+              <div className="flex flex-wrap justify-center gap-8 opacity-60">
+                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
+                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
+                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
+                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
+                <div className="w-24 h-12 bg-gray-200 rounded-lg"></div>
               </div>
-              <div className="text-xs text-gray-300">
-                Follow us on social media for real-time updates
-              </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>

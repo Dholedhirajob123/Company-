@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Target, Eye, Award, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Target, Eye, Award, Globe} from 'lucide-react';
 
 const About = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -127,7 +127,7 @@ const About = () => {
         </div>
 
         {/* Team Collaboration Section */}
-        <div className="mb-20">
+        {/* <div className="mb-20">
           <div className="relative overflow-hidden rounded-2xl shadow-lg">
             <img 
               src="https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&cs=tinysrgb&w=1200" 
@@ -145,7 +145,7 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         {/* Office Workspace Section */}
         <div className="mb-20">

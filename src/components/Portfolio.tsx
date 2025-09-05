@@ -500,7 +500,7 @@ const Portfolio = () => {
       title: 'BookEasy - Online Booking Platform',
       category: 'Booking',
       description: 'A seamless online booking platform for hotels, travel, and events with real-time availability, secure payments, and personalized recommendations.',
-      image: 'https://images.pexels.com/photos/374740/pexels-photo-374740.jpeg?auto=compress&cs=tinysrgb&w=1200',
+      image: 'https://images.pexels.com/photos/4144225/pexels-photo-4144225.jpeg?auto=compress&cs=tinysrgb&w=1200',
       technologies: ['React', 'Next.js', 'Node.js', 'MongoDB', 'Stripe', 'Firebase'],
       duration: '5 months',
       team: '6 developers',
